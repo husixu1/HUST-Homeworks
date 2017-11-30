@@ -1,0 +1,64 @@
+% Ctex Settings %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+fontset=none,		% a must-have option
+heading=true,		% <true|false>		enable heading, affecet numbering
+scheme=chinese,		% <chinese|plain>	use chinese scheme
+linespread=1.3,		% line spreading
+zihao=5				% set font size
+]{ctex}
+
+% this is an workaround for the wrong hyperref content
+\newlength{\tempspacewidth}
+\setlength{\tempspacewidth}{3em}
+
+\ctexset{
+	fontset=adobe,				% <adobe|fandol|founder|ubuntu|mac|windos|windowsnew|...>
+	punct=quanjiao,				% <quanjian|banjiao|kaiming|plain>
+	autoindent=true,			% <true|false|num|num-with-metric>
+	today=small,				% <small|big|old> old for English format
+	contentsname=目录,			% name of the content
+	listfigurename=插图,		% name of listfigure
+	listtablename=表格,			% name of the list table
+	figurename=图,				% name of the figure
+	tablename=表,				% name of the table
+	indexname=索引,				% name of the index
+	appendixname=附录,			% name of the appendix
+	% --------------------------------------------
+	% Whether parts's header should be numbered -- Number
+	part/numbering=true,
+	section/numbering=true,
+	subsection/numbering=true,
+	subsubsection/numbering=true,
+	paragraph/numbering=true,
+	subparagraph/numbering=true,
+	appendix/numbering=true,
+	% --------------------------------------------
+	% Control the format of the NUMBERIG --------- Number
+	section/name={,},					% section name, has the format of {AAA,BBB}
+	subsection/name={,},
+	subsubsection/name={,},
+	appendix/name={附录},
+	section/number=\Roman{section},		% can use \chinese{<counter>}
+	subsection/number=\Roman{section}.\arabic{subsection},
+	subsubsection/number=\Roman{section}.\arabic{subsection}.\arabic{subsubsection},
+	paragraph/number=\arabic{paragraph},
+	subparagraph/number=\arabic{paragraph}.\arabic{subparagraph},
+	appendix/number=\Alph{section},
+	% --------------------------------------------
+	% Control the format of parts' header -------- Global
+	section/format=\Large\bfseries,		% add \centering here if you want to centralize it
+	subsection/format=\large\bfseries,
+	subsubsection/format=\normalsize\bfseries,
+	paragraph/format=\normalsize\bfseries,
+	subparagraph/format=\normalsize\bfseries,
+	% --------------------------------------------
+	% Control the format of TOC ------------------ Name
+	section/tocline=\Large\bfseries\CTEXnumberline{#1}#2,		% \CTEXnumberline means that if the section/etc has no name, then do not output the num
+	subsection/tocline=\large\bfseries\CTEXnumberline{#1}#2,
+	subsubsection/tocline=\normalsize\bfseries\CTEXnumberline{#1}#2,
+	paragraph/tocline=\normalsize\CTEXnumberline{#1}#2,
+	subparagraph/tocline=\normalsize\CTEXnumberline{#1}#2,
+}
+
+

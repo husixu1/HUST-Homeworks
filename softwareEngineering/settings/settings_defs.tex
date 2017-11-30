@@ -1,0 +1,66 @@
+% Definitions %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newfontfamily\codeF{Courier New}
+\newfontfamily\codeI{monofur}
+
+% the code environment
+\newenvironment{code}[2]	% lanuage, gobble-char-num
+{	\codeF
+	\lstset{
+		language=#1
+		tabsize=4,
+		breaklines=true,
+		frame=shadowbox,
+		framexleftmargin=7mm,
+		rulesepcolor=\color{black},
+		basicstyle=\small,
+		numbers=left
+		gobble=#2
+	}
+	\begin{lstlistings}
+}
+%%% code here %%%
+{\end{lstlistings}}
+
+% the codeInteresting code environment
+\newenvironment{codeInteresting}[2]	% lanuage, gobble-char-num
+{	\codeI
+	\lstset{
+		language=#1
+		tabsize=4,
+		breaklines=true,
+		frame=shadowbox,
+		framexleftmargin=7mm,
+		rulesepcolor=\color{black},
+		basicstyle=\small,
+		numbers=left
+		gobble=#2
+	}
+	\begin{lstlistings}
+}
+%%% code here %%%
+{\end{lstlistings}}
+
+
+\newcommand{\coverpage}{
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+}
+
+\newcommand{\toc}{
+	\newpage
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\tableofcontents
+}
+
+\newcommand{\maincontents}{
+	\newpage
+	\pagestyle{fancy}
+	\setlength{\headheight}{12.2pt}
+	\setlength{\headsep}{15pt}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+}
+
+
