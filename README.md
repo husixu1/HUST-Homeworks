@@ -20,6 +20,7 @@
 | NetStructureDesign/      | 计算机网络实验，组网                   |
 | CppCheckPlusPlus/        | C++课设检查系统（官方的那个不忍直视）  |
 | CppExperiment/           | C++实验（题目不忍直视）                |
+| operatingSystem/         | 操作系统实验                           |
 
 # LICENSE
 
