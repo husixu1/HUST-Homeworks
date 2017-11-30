@@ -1,0 +1,168 @@
+          # 八皇后问题
+
+          WORD     cnt = 0                 # 解计数器
+          BYTE     sltn[8] = {0,0,0,0,0,0,0,0}   # 存放解的数组，元素值依次为各行上皇后的位置
+          BYTE     cell[64]                # 元素值表示对应单元位置受皇后攻击状况
+
+          # 将数组cell的元素值初始化为0
+          LOADI    A        64             # 设置数组下标的上界为64
+          LOADI    G        0              # 数组下标初始化为0
+init:     STOREB   Z        cell           # 将寄存器Z的值存入cell[G]
+          ADDI     G        1              # 下标增加1
+          LT       G        A              # 关系运算 G < 64
+          CJMP     init                    # 比较结果为真则转至标号init，否则往下执行
+
+          LOADI    B        0              # 将行号0存入寄存器B中
+          PUSH     B                       # 将B值压入堆栈
+          CALL     dfs                     # 调用子程序dfs
+
+          HLT                              # 终止程序运行
+
+          # 深度优先搜索算法，采用递归实现
+dfs:      POP      B                       # 从堆栈中取出行号值存入寄存器B
+          LOADI    C        8              # 将行号的上界值8存入寄存器C，行号取值范围0-7
+          LT       B        C              # 关系运算 B < C，比较行号是否越界
+          CJMP     next                    # 没有越界则转至标号next，否则往下执行
+          CALL     prnt                    # 行号越界表明得到了一个解，调用子程序prnt，输出解
+          RET                              # 控制返回子程序被调用处
+
+next:     LOADI    A        0              # 将0存入寄存器A，从B行的第0列开始测试
+n1:       MUL      D        B       C      # 计算 D = B * C，计算第B行元素的起始下标
+          ADD      G        A       D      # 计算 G = A + D，得到第B行第A列的元素下标值
+          LOADB    D        cell           # 将cell[G]取出，存入寄存器D
+          EQU      D        Z              # 关系运算 D == 0(Z)，为真表明第B行第A列没有受到皇后攻击
+          NOTC                             # 将比较标志位的值反转
+          CJMP     n2                      # 此时比较标志为真表示D不等于0，转至标号n2，否则可在此处放置皇后
+          PUSH     A                       # 将寄存器A的值压入堆栈
+          PUSH     B                       # 将寄存器B的值压入堆栈
+          CALL     tag                     # 调用子程序tag在B行A列放置皇，并在皇后所能攻击到的位置上做标记
+          ADD      D        B       Z      # 将寄存器B的值存入寄存器D  D = B + Z
+          ADDI     D        1              # 将寄存器D中的值增加1      D = D + 1，得到下一行行号
+          PUSH     D                       # 将下一行行号D压入堆栈
+          CALL     dfs                     # 递归调用，在下一行合适的位置上放置皇后
+          PUSH     A                       # 将列号A压入堆栈
+          PUSH     B                       # 将行号B压入堆栈
+          CALL     tag                     # 再次调用tag，抹去标记
+
+n2:       ADDI     A        1              # 列号增加1
+          LT       A        C              # 关系运算 列号 < 8
+          CJMP     n1                      # 为真则转至标号n1，继续测试新一列
+
+          RET                              # 否则返回子程序被调用处
+
+          # 输出解
+prnt:     LOADI    G        0              # 下标置为0
+          LOADW    C        cnt            # 将解计数器的值加载到寄存器C中
+          ADDI     C        1              # 计数器的值增加1
+          STOREW   C        cnt            # 存入计数器
+          LOADI    E        1              # 将1存入寄存器E，用作按位与运算的屏蔽码 0x1
+          AND      D        C       E      # 按位与运算，将C的最低位取出，存入寄存器D中
+          PUSH     D                       # D中值为1，表明解的个数为奇数，为0则是偶数，先将D入栈
+          LOADI    D        10             # D = 10，十进制进位值
+loop1:    DIV      E        C       D      # E = C / D，E中为C除以10的商，整数除，切掉C的个位数字
+          MUL      F        D       E      # F = D * E
+          SUB      F        C       F      # F = C - F，得到C除以10的余数
+          PUSH     F                       # 将余数F入栈
+          ADDI     G        1              # G用来为余数压栈次数进行计数
+          ADD      C        E       Z      # 将商E存入C
+          LT       Z        C              # 关系运算 Z < C
+          CJMP     loop1                   # 为真表示商大于0，转至loop1，继续求余数
+loop2:    POP      C                       # 余数出栈，存入C
+          ADDI     C        48             # C = C + 48，将数字转为数字字符
+          OUT      C        15             # 输出C中的数字字符
+          SUBI     G        1              # 余数计数器减1
+          LT       Z        G              # 关系运算符 Z < G
+          CJMP     loop2                   # 为真表明入栈的余数还未取完，转loop2继续取余数并转换为数字字符输出
+          LOADI    C        58             # 将字符 ':' 存入寄存器C
+          OUT      C        15             # 输出字符 ':'
+          LOADI    C        10             # 将换行符 '\n' 存入寄存器C
+          OUT      C        15             # 输出换行符
+
+          # 依次输出八行上皇后的位置
+          LOADI    A        8              # 将数组下标上限8存入寄存器A
+          LOADI    G        0              # 将下标置为0
+loop3:    LOADB    C        sltn           # C = sltn[G]，每个元素的值表示元素下标对应的行上皇后放置的位置
+          PUSH     C                       # C入栈，C值表示皇后在第G行上的位置，即列号
+          CALL     aline                   # 调用子程序 aline 输出第G行的摆子情况
+          ADDI     G        1              # G = G + 1，下标增加1
+          LT       G        A              # 关系运算 G < A，判断下标是否越界
+          CJMP     loop3                   # 为真，则转到标号loop3输出下一行，否则继续执行
+          LOADI    C        10             # 将换行符 '\n' 存入C
+          OUT      C        15             # 输出换行符
+
+          POP      D                       # 解个数的最低位出栈，存入D
+          LT       Z        D              # 关系运算 0(Z) < D
+          CJMP     loop4                   # 为真，表明解的个数是奇数，转至loop4，否则执行下一行
+          IN       D        0              # 等待从键盘输入一个字符。这样实现了每输出两个解程序停顿一下的效果
+
+loop4:    RET                              # 返回
+
+          # 输出棋盘一行的摆子情况
+aline:    POP      B                       # 皇后所在的列号出栈到B中
+          LOADI    A        8              # A = 8
+          LOADI    D        0              # D = 0，列号初始化为0
+          LOADI    E        32             # E = 32，空格字符
+a1:       LOADI    C        49             # C = 49，数字字符1
+          EQU      B        D              # 关系运算 B == D
+          CJMP     a2                      # 为真，表明D列上放置皇后，转至a2，否则执行下行
+          SUBI     C        1              # C = C - 1，得到数字字符0
+a2:       OUT      C        15             # 将C中的数字字符输出
+          OUT      E        15             # 输出一个空格字符
+          ADDI     D        1              # D = D + 1，列号增加1
+          LT       D        A              # 关系运算 D < A
+          CJMP     a1                      # 为真，表明此行还没有全部输出，转至a1继续输出
+          LOADI    C        10             # 将换行符 \n 存入C
+          OUT      C        15             # 输出一个换行符
+          RET                              # 返回
+
+          # 在第B行A列上放置皇后，在后面各行皇后能够攻击到的单元位置上做标记
+tag:      POP      B                       # 行号出栈到B
+          POP      A                       # 列号出栈到A
+          ADD      G        B       Z      # G = B( + Z)，即将行号存入G，作为数组下标
+          STOREB   A        sltn           # 将列号存入解数组元素sltn[G]，表示第B行A列放置皇后
+          LOADI    C        8              # C = 8
+          LOADI    D        0              # D = 0
+t1:       ADDI     D        1              # D = D + 1
+          ADD      E        B       D      # E = B + D，B行后的第D行行号存入E
+          LT       E        C              # 关系运算 E < C，行号小于8
+          CJMP     t2                      # 为真则转到标号t2
+          RET                              # 否则返回
+
+          # 在E行A列单元上用行号B做标记
+t2:       PUSH     A                       # A入栈
+          PUSH     B                       # B入栈
+          PUSH     E                       # 需做标记的行E入栈
+          CALL     mark                    # 调用子程序mark，在第E行上做标记
+
+          # 在E行A-D列单元上用行号B做标记
+          SUB      F        A       D      # F = A - D
+          LT       F        Z              # 关系运算 F < 0
+          CJMP     t3                      # 列号小于0，转至t3
+          PUSH     F
+          PUSH     B
+          PUSH     E
+          CALL     mark
+
+          # 在E行A+D列单元上用行号B做标记
+t3:       ADD      F        A       D      # F = A + D
+          LTE      C        F              # 关系运算 8 <= F
+          CJMP     t1
+          PUSH     F
+          PUSH     B
+          PUSH     E
+          CALL     mark
+          JMP      t1
+
+          # 在C行A列单元上用B做标记
+mark:     POP      C                
+          POP      B                 
+          POP      A                 
+          LOADI    D        8              # D = 8
+          MUL      E        C       D      # E = C * D
+          ADD      G        A       E      # G = A + E，G为C行A列单元数组元素下标
+          LOADB    E        cell           # E = cell[G]
+          LOADI    F        1              # F = 1
+          SAL      B        F       B      # B = F << B
+          NOR      E        E       B      # E = E ^ B
+          STOREB   E        cell           # 将E存入cell[G]
+          RET                              # 返回

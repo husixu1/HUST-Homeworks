@@ -1,0 +1,35 @@
+		BYTE	num = 100
+	
+		LOADI	A	0		#记录和
+		LOADB	B   num 	#记录n
+		LOADI	C	1		#记录当前数
+		LOADI	D	1		#自增步长
+		LOADI   E   10
+		LOADI   F   0
+
+loop:	LT		B 	C
+		CJMP	print
+		ADD		A   A 	C
+		ADDI	C  	1
+		JMP 	loop
+
+print:	DIV     C   A   E
+		MUL     C   C   E
+		SUB     D   A   C
+		ADDI    D   48
+		PUSH    D
+		ADDI    F   1
+		DIV     A   A   E
+		EQU     A   Z
+		CJMP    print2
+		JMP     print
+print2:	POP     A
+		SUBI    F   1
+        OUT		A 	15
+        EQU     F   Z
+		CJMP    end 
+        JMP     print2
+end:	LOADI	A	10
+	OUT	A	15
+	HLT
+

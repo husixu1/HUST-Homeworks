@@ -1,0 +1,47 @@
+		LOADI C    10
+		LOADI D    0
+input:	IN    B    0	#输入
+		EQU   C    B
+		SUBI  B    48
+		CJMP  main
+		MUL   D    D    C
+		ADD   D    D    B
+		JMP input
+
+main:	ADD   A    D    Z
+		LOADI B	   16	#进制
+		LOADI F    0    #计数
+		LOADI G    10   #输出
+
+loop:	DIV	  C	   A    B	#C除法结果
+		MUL	  D    C    B   #D中间
+		SUB   E    A	D   #E余数
+
+		ADDI  F	   1    
+		PUSH  E
+		ADD   A    C    Z
+
+		EQU   C    Z
+		CJMP  print
+		JMP   loop
+
+print:  POP   A
+		LT    A    G
+		CJMP  num
+		JMP   chr
+cont:	SUBI  F	   1
+		LTE   F    Z
+		CJMP  end
+		JMP   print
+
+num:    ADDI  A    48
+		OUT   A    15
+		JMP   cont
+
+chr:    ADDI  A    55
+		OUT   A    15
+		JMP   cont
+
+end:	LOADI	A	10
+	OUT	A	15
+	HLT
