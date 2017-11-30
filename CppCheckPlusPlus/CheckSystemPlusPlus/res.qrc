@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/FiraCode-Bold.ttf</file>
+        <file>res/FiraCode-Light.ttf</file>
+        <file>res/FiraCode-Medium.ttf</file>
+        <file>res/FiraCode-Regular.ttf</file>
+        <file>res/gplv3-127x51.png</file>
+        <file>res/icon.jpg</file>
+        <file>res/cpp_logo.png</file>
+        <file>translations/CheckSystemPlusPlus_zh-CN.qm</file>
+        <file>res/info-icon.png</file>
+        <file>res/language-icon.png</file>
+    </qresource>
+</RCC>
