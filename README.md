@@ -17,6 +17,7 @@
 | digitalCircuits/         | 数字电路实验                           |
 | softwareEngineering/     | 软件工程报告                           |
 | x86assembly/             | x86汇编实验                            |
+| LowRC/                   | 计算机网络实验，丑陋的聊天工具         |
 
 # LICENSE
 

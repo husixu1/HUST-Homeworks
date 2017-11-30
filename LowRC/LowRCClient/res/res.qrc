@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/animations">
+        <file>loadingAnimation.gif</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>icon.jpg</file>
+        <file>closebutton.png</file>
+        <file>minimizebutton.png</file>
+        <file>settingsbutton.png</file>
+        <file>trayicon.png</file>
+    </qresource>
+</RCC>
