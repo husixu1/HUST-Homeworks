@@ -1,0 +1,216 @@
+; \brief put a string starting at addr
+; \usage puts <offset var>
+; in which var is an variable name
+puts macro addr
+push	dx
+push	ax
+	mov		dx, addr
+	mov		ah, 09h
+	int		21H
+pop		ax
+pop		dx
+endm
+
+; \brief get a string and stores it in addr+2
+; \usage puts <offset var>, num
+; in which var is an variable name, num is the max length
+gets macro addr, max_num
+push	bx
+push	ax
+push	dx
+	mov		bx, addr
+	mov		[bx], byte ptr max_num
+	mov		dx, bx
+	mov		ah, 0ah
+	int		21h
+	; output an return ('\r\n')
+	mov		dl, 0dh
+	mov		ah, 02h
+	int		21h
+	mov		dl, 0ah
+	mov		ah, 02h
+	int		21h
+pop		dx
+pop		ax
+pop		bx
+endm
+
+; \brief convert a string to a positive number(no greater than 2^32)
+; \brief exceeds are abandond
+; \return push the result in stack (4 bytes) (CAN NOT BE IGNORED)
+atoi macro addr, end_char
+local end, start
+push	eax					; preserve space for result
+push	eax
+push	ebx
+push	ecx
+	mov		eax, 00h
+	mov		ecx, 00h
+	mov		cx, addr
+start:
+	cmp		[ecx], byte ptr end_char
+	je		end
+
+	mov		ebx, 0ah
+	mul		ebx				; discard the exceed digit
+	mov		bl,	[ecx]
+	add		eax, ebx
+	sub		eax, 30h
+	inc		cx
+
+	jmp		start
+end:
+	mov		[esp+0ch], eax	; return the result
+pop		ecx
+pop		ebx
+pop		eax
+endm
+
+; \brief convert an number (word) to a string, store it in addr ending with '$'
+itoa macro addr, reg
+local pushloop, poploop
+push	reg
+push	ax
+push	bx
+push	cx
+push	dx
+	mov		ax, reg
+	mov		bl, 0ah
+	mov		cx, 0
+pushloop:
+	mov		ah, 00h
+	div		bl
+	movzx	dx, ah
+	push	dx
+	inc		cx
+	cmp		al, 0
+	jnz		pushloop
+
+	mov		bx, addr
+poploop:
+	pop		ax
+	add		al, 30h
+	mov		[bx], al
+	inc		bx
+	loop	poploop
+
+	mov		[bx], byte ptr '$'		; add an ending char
+pop		dx
+pop		cx
+pop		bx
+pop		ax
+pop		reg
+endm
+
+outreturn macro
+push	ax
+push	dx
+	mov		dl, 0dh
+	mov		ah, 02h
+	int		21h
+	mov		dl, 0ah
+	mov		ah, 02h
+	int		21h
+pop		dx
+pop		ax
+endm
+
+cls	macro
+push	ax
+push	bx
+push	cx
+push	dx
+	mov		ax, 0600h					;clear the screen
+	mov		bh, 07h
+	mov		cx, 0000h
+	mov		dx, 184fh
+	int		10h
+	mov		ah, 02h
+	mov		bh, 04h
+	mov		dx, 00h
+	int		10h
+Pop		dx
+Pop		cx
+Pop		bx
+Pop		ax
+endm
+
+; \brief encrypt a string which has N bytes(N > 0)
+; \return store it in place
+encrypt macro addr, N
+local looping, ending, anti_0, anti_1, anti_2, anti_3, anti_4, anti_5, anti_6, anti_7, anti_8, anti_9, anti_10, anti_11, anti_12, anti_13, anti_14
+jmp		anti_0
+
+anti_3:				dec		ebx
+jmp		anti_4
+anti_6:				cmp		ecx, N
+jmp		anti_7
+anti_12:				inc		ecx
+jmp		anti_13
+anti_4:				mov		ecx, 1
+jmp		anti_5
+anti_10:				mov		[ebx], al
+jmp		anti_11
+anti_7:				je		ending
+jmp		anti_8
+anti_0:			pushad
+jmp		anti_1
+anti_11:				dec		ebx
+jmp		anti_12
+anti_1:				mov		ebx, addr+N
+jmp		anti_2
+anti_9:				xor		al, [ebx+1]
+jmp		anti_10
+anti_5:			looping:
+jmp		anti_6
+anti_8:				mov		al, [ebx]
+jmp		anti_9
+anti_13:				jmp		looping
+jmp		anti_14
+anti_2:				dec		ebx
+jmp		anti_3
+
+anti_14:
+ending:
+popad
+endm
+
+; \brief decrypt a string which has N bytes(N > 0)
+; \return store it in place
+decrypt macro addr, N
+local looping, ending, anti_0, anti_1, anti_2, anti_3, anti_4, anti_5, anti_6, anti_7, anti_8, anti_9, anti_10, anti_11, anti_12, anti_13, anti_14
+jmp		anti_0
+
+anti_13:				jmp		looping
+jmp		anti_14
+anti_2:				mov		ecx, 1
+jmp		anti_3
+anti_7:				mov		al, [ebx]
+jmp		anti_8
+anti_1:				mov		ebx, addr
+jmp		anti_2
+anti_12:				inc		ecx
+jmp		anti_13
+anti_5:				je		ending
+jmp		anti_6
+anti_6:
+jmp		anti_7
+anti_0:			pushad
+jmp		anti_1
+anti_10:				inc		ebx
+jmp		anti_11
+anti_8:				xor		al, [ebx+1]
+jmp		anti_9
+anti_3:			looping:
+jmp		anti_4
+anti_9:				mov		[ebx], al
+jmp		anti_10
+anti_4:				cmp		ecx, N
+jmp		anti_5
+anti_11:
+jmp		anti_12
+
+anti_14:
+ending:
+popad
+endm

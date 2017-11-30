@@ -1,0 +1,82 @@
+--- Problem1/SUBMOD2.ASM	2017-04-04 19:36:21.830171514 +0800
++++ Problem2/SUBMOD2.ASM	2017-04-09 01:14:44.887611795 +0800
+@@ -1,7 +1,7 @@
+ .386
+ include macrolib
+ 
+-public		calcavg
++public		_calcavg
+ public		refresh_avg
+ 
+ extrn		tab:byte
+@@ -10,17 +10,18 @@
+ extrn		printname:far
+ 
+ _stack segment use16 stack "stack"
++	db	0ffh dup(0)
+ _stack ends
+ 
+-data segment use16 public "data"
++_DATA segment use16 public "DATA"
+ 	input_max_num	equ 10
+-	info1	db	' Submenu - Average Score Calculate %%%%%%%%', 0dh, 0ah
+-			db	'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', 0dh, 0ah
++	info1	db	' Submenu - Average Score Calculate ////////', 0dh, 0ah
++			db	'///////////////////////////////////////////', 0dh, 0ah
+ 			db	'    1) Calculate/Refresh all students      ', 0dh, 0ah
+ 			db	'    2) Specify a student (by index)        ', 0dh, 0ah
+ 			db	'    3) Specify a student (by name)         ', 0dh, 0ah
+ 			db	'    0) Exit                                ', 0dh, 0ah
+-			db	'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', 0dh, 0ah
++			db	'///////////////////////////////////////////', 0dh, 0ah
+ 			db	'Please input your choice >>> $'
+ 
+ 	info2	db	'Index $'
+@@ -38,17 +39,17 @@
+ 	input	db	input_max_num
+ 			db	?
+ 	buffer	db	input_max_num dup(0)
+-data ends
++_DATA ends
+ 
+-code segment use16 public "code"
+-	assume	cs:code, ds:data, ss:_stack, es:data
++_TEXT segment use16 public "CODE"
++	assume	cs:_TEXT, ds:_DATA, ss:_stack, es:_DATA
+ start:
+ 
+-calcavg proc
++_calcavg proc
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ cal_s:
+@@ -233,7 +234,7 @@
+ pop		ds
+ popad
+ ret
+-calcavg endp
++_calcavg endp
+ 
+ ; \brief calculate a student's avgscore and store it in tab
+ ; \para (2 byte) index of the student in stack
+@@ -281,7 +282,7 @@
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ 	mov		cx, 00h
+@@ -310,5 +311,5 @@
+ ret
+ refresh_avg endp
+ 
+-code ends
++_TEXT ends
+ end start

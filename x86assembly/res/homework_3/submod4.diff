@@ -1,0 +1,55 @@
+--- Problem1/SUBMOD4.ASM	2017-04-04 18:39:49.821934737 +0800
++++ Problem2/SUBMOD4.ASM	2017-04-09 01:11:14.030915824 +0800
+@@ -1,7 +1,7 @@
+ .386
+ include macrolib
+ 
+-public		printall
++public		_printall
+ 
+ extrn		tab:byte
+ extrn		stu_max_num:abs
+@@ -9,9 +9,10 @@
+ extrn		refresh_rank:far
+ 
+ _stack segment use16 stack "stack"
++	db	0ffh dup(0)
+ _stack ends
+ 
+-data segment use16 public "data"
++_DATA segment use16 public "DATA"
+ 	info1	db	'+------------+-----+-----+-----+-----+------+', 0dh, 0ah
+ 			db	'|    Name    | CHN | MAT | ENG | AVG | RANK |', 0dh, 0ah
+ 	info2	db	'+------------+-----+-----+-----+-----+------+', 0dh, 0ah, '$'
+@@ -21,16 +22,16 @@
+ 	buffer	db	80 dup(0)
+ 	numbuff	db	10 dup(0)
+ 
+-data ends
++_DATA ends
+ 
+-code segment use16 public "code"
+-	assume	cs:code, ds:data, ss:_stack, es:data
++_TEXT segment use16 public "CODE"
++	assume	cs:_TEXT, ds:_DATA, ss:_stack, es:_DATA
+ start:
+-printall proc
++_printall proc
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ 	call	far ptr refresh_avg
+@@ -134,7 +135,7 @@
+ pop		ds
+ popad
+ ret
+-printall endp
++_printall endp
+ 
+-code ends
++_TEXT ends
+ end start

@@ -1,0 +1,77 @@
+--- Problem1/COMMOD.ASM	2017-04-04 19:19:52.286750943 +0800
++++ Problem2/COMMOD.ASM	2017-04-09 01:11:32.046547128 +0800
+@@ -3,18 +3,21 @@
+ 
+ public		name_to_index
+ public		printname
+-
+-extrn		tab:byte
+-extrn		stu_max_num:abs
++public		tab
++public		stu_max_num
+ 
+ _stack segment use16 stack "stack"
++	db	0ffh dup(0)
+ _stack ends
+ 
+-data segment use16 public "data"
+-data ends
++_DATA segment use16 public "DATA"
++	stu_max_num		equ 10
++	tab		dw	stu_max_num	dup(5 dup(0), -1h, -1h ,-1h, -1h, -1h)
++	clsstr 	db 'cls',0
++_DATA ends
+ 
+-code segment use16 public "code"
+-	assume	cs:code, ds:data, ss:_stack, es:data
++_TEXT segment use16 public "CODE"
++	assume	cs:_TEXT, ds:_DATA, ss:_stack, es:_DATA
+ start:
+ 
+ ; \para (2 byte) address of the name string in stack, string end with \0\0...\0
+@@ -23,7 +26,7 @@
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ 	mov		ecx, 0h
+@@ -69,7 +72,7 @@
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ 	mov		eax, 00h
+@@ -82,7 +85,7 @@
+ 	cmp		tab[ecx], byte ptr 0
+ 	je		printend
+ 
+-	mov		dl, tab[ecx]
++	mov		dl,  byte ptr tab[ecx]
+ 	mov		ah, 02h
+ 	int		21h
+ 
+@@ -96,6 +99,17 @@
+ ret
+ printname endp
+ 
+-code ends
++;clear proc
++;extrn	_system:near
++;pushad
++;	mov		ax, offset clsstr
++;	push	ax
++;	call	_system
++;	pop		ax
++;popad
++;ret
++;clear endp
++
++_TEXT ends
+ end start
+ 

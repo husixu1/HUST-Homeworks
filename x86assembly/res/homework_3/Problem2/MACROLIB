@@ -1,0 +1,132 @@
+; \brief put a string starting at addr
+; \usage puts <offset var>
+; in which var is an variable name
+puts macro addr
+pushad
+	extrn	_cprint:near
+	mov		dx, addr					; call printf
+	push	dx
+	call	_cprint
+	pop		ax
+popad
+endm
+
+; \brief get a string and stores it in addr+2
+; \usage puts <offset var>, num
+; in which var is an variable name, num is the max length
+gets macro addr, max_num
+pushad
+	extrn	_cscan:near
+	mov		ax, max_num
+	push	ax
+	mov		ax, addr
+	push	ax
+	call	_cscan
+	pop		ax
+	pop		ax
+popad
+endm
+
+; \brief convert a string to a positive number(no greater than 2^32)
+; \brief exceeds are abandond
+; \return push the result in stack (4 bytes) (CAN NOT BE IGNORED)
+atoi macro addr, end_char
+local end, start
+push	eax					; preserve space for result
+push	eax
+push	ebx
+push	ecx
+	mov		eax, 00h
+	mov		ecx, 00h
+	mov		cx, addr
+start:
+	cmp		[ecx], byte ptr end_char
+	je		end
+
+	mov		ebx, 0ah
+	mul		ebx				; discard the exceed digit
+	mov		bl,	[ecx]
+	add		eax, ebx
+	sub		eax, 30h
+	inc		cx
+
+	jmp		start
+end:
+	mov		[esp+0ch], eax	; return the result
+pop		ecx
+pop		ebx
+pop		eax
+endm
+
+; \brief convert an number (word) to a string, store it in addr ending with '$'
+itoa macro addr, reg
+local pushloop, poploop
+push	reg
+push	ax
+push	bx
+push	cx
+push	dx
+	mov		ax, reg
+	mov		bl, 0ah
+	mov		cx, 0
+pushloop:
+	mov		ah, 00h
+	div		bl
+	movzx	dx, ah
+	push	dx
+	inc		cx
+	cmp		al, 0
+	jnz		pushloop
+
+	mov		bx, addr
+poploop:
+	pop		ax
+	add		al, 30h
+	mov		[bx], al
+	inc		bx
+	loop	poploop
+
+	mov		[bx], byte ptr '$'		; add an ending char
+pop		dx
+pop		cx
+pop		bx
+pop		ax
+pop		reg
+endm
+
+outreturn macro
+push	ax
+push	dx
+	mov		dl, 0dh
+	mov		ah, 02h
+	int		21h
+	mov		dl, 0ah
+	mov		ah, 02h
+	int		21h
+pop		dx
+pop		ax
+endm
+
+cls	macro
+push	ax
+push	bx
+push	cx
+push	dx
+	mov		ah, 05h						; select page
+	mov		al, 00h
+	int		10h
+	mov		ax, 0632h					; clear the screen
+	mov		bh, 07h
+	mov		cx, 0000h
+	mov		dx, 184fh
+	int		10h							; cursor position
+	mov		ah, 02h
+	mov		bh, 00h
+	mov		dx, 00h
+	int		10h
+pop		dx
+pop		cx
+pop		bx
+pop		ax
+endm
+

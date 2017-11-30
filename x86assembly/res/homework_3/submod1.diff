@@ -1,0 +1,54 @@
+--- Problem1/SUBMOD1.ASM	2017-04-04 19:36:51.950275657 +0800
++++ Problem2/SUBMOD1.ASM	2017-04-09 01:10:15.614553013 +0800
+@@ -1,15 +1,16 @@
+ .386
+ include macrolib
+ 
+-public		register
++public		_registeration
+ 
+ extrn		tab:byte
+ extrn		stu_max_num:abs
+ 
+ _stack segment use16 stack "stack"
++	db	0ffh dup(0)
+ _stack ends
+ 
+-data segment use16 public "data"
++_DATA segment use16 public "DATA"
+ 	input_max_num	equ 10
+ 	grade_max_num	equ 100
+ 
+@@ -30,17 +31,17 @@
+ 
+ 	; store the input info temporarily, for atomic operation
+ 	stu_buf	db	20 dup(0)
+-data ends
++_DATA ends
+ 
+-code segment use16 public "code"
+-	assume	cs:code, ds:data, ss:_stack, es:data
++_TEXT segment use16 public "CODE"
++	assume	cs:_TEXT, ds:_DATA, ss:_stack, es:_DATA
+ start:
+ 
+-register proc
++_registeration proc
+ pushad
+ push	ds
+ push	es
+-mov		ax, data
++mov		ax, _DATA
+ mov		ds, ax
+ mov		es, ax
+ reg_s:
+@@ -157,7 +158,7 @@
+ pop		ds
+ popad
+ ret
+-register endp
++_registeration endp
+ 
+-code ends
++_TEXT ends
+ end start

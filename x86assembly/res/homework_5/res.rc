@@ -1,0 +1,20 @@
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+
+600 MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&Exit", 1000
+    END
+
+    POPUP "&Action", , , 0
+    BEGIN
+        MENUITEM "&Refresh Average and Rank", 1100
+        MENUITEM "&Show/Refresh List", 1200
+    END
+
+    POPUP "&Help", , , 0
+    BEGIN
+        MENUITEM "&About", 1300
+    END
+END
