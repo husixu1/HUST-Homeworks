@@ -1,0 +1,6 @@
+*.layout
+*.depend
+obj/*
+*.o
+setup_NDDIMS.exe
+*/setup_NDDIMS.exe
