@@ -1,0 +1,39 @@
+% Definitions %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\coverpage}{
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+}
+
+\newcommand{\toc}{
+	\newpage
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\tableofcontents
+}
+
+\newcommand{\maincontents}{
+	\newpage
+	\pagestyle{fancy}
+	\setlength{\headheight}{12.2pt}
+	\setlength{\headsep}{15pt}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+}
+
+\lstset{language=[x86masm]Assembler,
+		tabsize=4,
+		breaklines=true,
+		frame=shadowbox,
+		framexleftmargin=7mm,
+		rulesepcolor=\color{black},
+		basicstyle=\footnotesize,
+		numbers=left,
+		showspaces=false,
+		showstringspaces=false
+}
+\newfontfamily\codeF{Courier New}
+\newfontfamily\codeI{monofur}
+\newenvironment{codeFont}{\codeF}{\par}
+\newenvironment{codeInteresting}{\codeI}{\par}

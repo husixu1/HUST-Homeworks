@@ -1,0 +1,151 @@
+Unknown library function __libc_start_main
+got filename crtstuff.c for main
+Unknown library function __printf_chk
+got filename crtstuff.c for initialize_bomb
+got filename crtstuff.c for read_line
+got filename crtstuff.c for phase_1
+got filename crtstuff.c for phase_defused
+got filename crtstuff.c for phase_2
+got filename crtstuff.c for phase_3
+got filename crtstuff.c for phase_4
+got filename crtstuff.c for phase_5
+got filename crtstuff.c for phase_6
+got filename crtstuff.c for strings_not_equal
+got filename crtstuff.c for explode_bomb
+got filename crtstuff.c for read_six_numbers
+Unknown library function __isoc99_sscanf
+COMPUTED JUMP at 0x8048c3e, pDest = m[(r24 * 4) + 0x804a380]
+got filename crtstuff.c for func4
+got filename crtstuff.c for string_length
+Unknown library function signal
+got filename crtstuff.c for init_driver
+Unknown library function __stack_chk_fail
+got filename crtstuff.c for send_msg
+got filename crtstuff.c for skip
+got filename crtstuff.c for secret_phase
+Unknown library function socket
+Unknown library function gethostbyname
+Unknown library function close
+Unknown library function __memmove_chk
+Unknown library function connect
+Unknown library function __sprintf_chk
+Unknown library function strtol
+got filename crtstuff.c for fun7
+got filename crtstuff.c for blank_line
+Unknown library function __ctype_b_loc
+=== about to restart decompilation of phase_3 because indirect jumps or calls have been analysed
+
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for ??
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for ??
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for ??
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for ??
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param3
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param4
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param5
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param1
+WARNING: CHLLCode::appendTypeIdent: declaring type void as int for param2

