@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>result</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/home/husixu/Homework/network/network_2/5/result/../../common/sakura/sakura-dark.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="结果分析">结果分析</h1>
+<h2 id="配置">配置</h2>
+<figure>
+<img src="./configure.png" alt="configure" /><figcaption>configure</figcaption>
+</figure>
+<h2 id="拥塞窗口">拥塞窗口</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">TCP Agent</th>
+<th style="text-align: left;">UDP Pack Size = 250</th>
+<th style="text-align: left;">UDP Pack Size = 1000</th>
+<th style="text-align: left;">UDP Pack Size = 2000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">tcp0/Tahoe</td>
+<td style="text-align: left;"><img src="./window_tcp0_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp0.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp0_2.png" data-witdth="600px" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tcp1/Reno</td>
+<td style="text-align: left;"><img src="./window_tcp1_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp1.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp1_2.png" data-witdth="600px" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tcp2/newR</td>
+<td style="text-align: left;"><img src="./window_tcp2_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp2.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp2_2.png" data-witdth="600px" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tcp3/Vegas</td>
+<td style="text-align: left;"><img src="./window_tcp3_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp3.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp3_2.png" data-witdth="600px" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tcp4/Sack</td>
+<td style="text-align: left;"><img src="./window_tcp4_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp4.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp4_2.png" data-witdth="600px" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tcp5/Fack</td>
+<td style="text-align: left;"><img src="./window_tcp5_25.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp5.png" data-witdth="600px" /></td>
+<td style="text-align: left;"><img src="./window_tcp5_2.png" data-witdth="600px" /></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

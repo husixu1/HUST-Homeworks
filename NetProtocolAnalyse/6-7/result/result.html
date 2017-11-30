@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>result</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/home/husixu/Homework/network/network_2/6-7/result/../../common/sakura/sakura-dark.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="结果分析">结果分析</h1>
+<h2 id="配置">配置</h2>
+<p><img src="./configure.png" /></p>
+<h2 id="发送接收">发送/接收</h2>
+<h3 id="udp-pack-size-250">UDP pack size = 250</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Proxy</th>
+<th style="text-align: left;">Total Sent</th>
+<th style="text-align: left;">Total Receive</th>
+<th style="text-align: left;">Usage</th>
+<th style="text-align: left;">Delay</th>
+<th style="text-align: left;">Send/Receive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DropTail</td>
+<td style="text-align: left;">21272160</td>
+<td style="text-align: left;">21389820</td>
+<td style="text-align: left;">42.66%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_droptail_25.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DRR</td>
+<td style="text-align: left;">20024240</td>
+<td style="text-align: left;">20111900</td>
+<td style="text-align: left;">40.14%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_DRR_25.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RED</td>
+<td style="text-align: left;">18313300</td>
+<td style="text-align: left;">18422120</td>
+<td style="text-align: left;">36.74%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_RED_25.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FQ</td>
+<td style="text-align: left;">22266460</td>
+<td style="text-align: left;">23008560</td>
+<td style="text-align: left;">45.28%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_FQ_25.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SFQ</td>
+<td style="text-align: left;">21018420</td>
+<td style="text-align: left;">21328220</td>
+<td style="text-align: left;">42.35%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ_25.png" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="udp-pack-size-1000">UDP pack size = 1000</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Proxy</th>
+<th style="text-align: left;">Total Sent</th>
+<th style="text-align: left;">Total Receive</th>
+<th style="text-align: left;">Usage</th>
+<th style="text-align: left;">Delay</th>
+<th style="text-align: left;">Send/Receive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DropTail</td>
+<td style="text-align: left;">15261220</td>
+<td style="text-align: left;">15856340</td>
+<td style="text-align: left;">31.12%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_droptail.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DRR</td>
+<td style="text-align: left;">15588720</td>
+<td style="text-align: left;">16512600</td>
+<td style="text-align: left;">32.10%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_DRR.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RED</td>
+<td style="text-align: left;">14548140</td>
+<td style="text-align: left;">15153160</td>
+<td style="text-align: left;">29.70%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_RED.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FQ</td>
+<td style="text-align: left;">22515180</td>
+<td style="text-align: left;">30473780</td>
+<td style="text-align: left;">52.98%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_FQ.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SFQ</td>
+<td style="text-align: left;">17076080</td>
+<td style="text-align: left;">19510380</td>
+<td style="text-align: left;">36.58%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ.png" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="udp-pack-size-2000">UDP pack size = 2000</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Proxy</th>
+<th style="text-align: left;">Total Sent</th>
+<th style="text-align: left;">Total Receive</th>
+<th style="text-align: left;">Usage</th>
+<th style="text-align: left;">Delay</th>
+<th style="text-align: left;">Send/Receive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DropTail</td>
+<td style="text-align: left;">12984460</td>
+<td style="text-align: left;">21128200</td>
+<td style="text-align: left;">34.11%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_droptail_2.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DRR</td>
+<td style="text-align: left;">15518840</td>
+<td style="text-align: left;">26256460</td>
+<td style="text-align: left;">41.78%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_DRR_2.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RED</td>
+<td style="text-align: left;">12574620</td>
+<td style="text-align: left;">20261440</td>
+<td style="text-align: left;">32.83%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_RED_2.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FQ</td>
+<td style="text-align: left;">22549720</td>
+<td style="text-align: left;">40455320</td>
+<td style="text-align: left;">63.01%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_FQ_2.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SFQ</td>
+<td style="text-align: left;">16381980</td>
+<td style="text-align: left;">27969380</td>
+<td style="text-align: left;">44.35%</td>
+<td style="text-align: left;">0.081485</td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ_2.png" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="横向对比">横向对比</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Proxy</th>
+<th style="text-align: left;">UDP Pack size = 250</th>
+<th style="text-align: left;">UDP Pack size = 1000</th>
+<th style="text-align: left;">UDP Pack size = 2000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DropTail</td>
+<td style="text-align: left;"><img src="./sendrecv_droptail_25.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_droptail.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_droptail_2.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DRR</td>
+<td style="text-align: left;"><img src="./sendrecv_DRR_25.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_DRR.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_DRR_2.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RED</td>
+<td style="text-align: left;"><img src="./sendrecv_RED_25.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_RED.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_RED_2.png" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FQ</td>
+<td style="text-align: left;"><img src="./sendrecv_FQ_25.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_FQ.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_FQ_2.png" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SFQ</td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ_25.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ.png" width="600" /></td>
+<td style="text-align: left;"><img src="./sendrecv_SFQ_2.png" width="600" /></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

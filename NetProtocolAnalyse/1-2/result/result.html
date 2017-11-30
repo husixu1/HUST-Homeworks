@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>result</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/home/husixu/Homework/network/network_2/1-2/result/../../common/sakura/sakura-dark.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="结果分析">结果分析</h1>
+<h2 id="配置">配置</h2>
+<figure>
+<img src="./configure.png" alt="configure" /><figcaption>configure</figcaption>
+</figure>
+<h2 id="重传率-端到端延时">重传率 &amp; 端到端延时</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Node</th>
+<th style="text-align: left;">Rate</th>
+<th style="text-align: left;">Delay</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">tcp</td>
+<td style="text-align: left;">n0 → n16</td>
+<td style="text-align: left;">0.07089552</td>
+<td style="text-align: left;">0.101725</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n1 → n17</td>
+<td style="text-align: left;">0.040669855</td>
+<td style="text-align: left;">0.102925</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n2 → n18</td>
+<td style="text-align: left;">0.06993007</td>
+<td style="text-align: left;">0.104125</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n3 → n19</td>
+<td style="text-align: left;">0.071969695</td>
+<td style="text-align: left;">0.105325</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n4 → n10</td>
+<td style="text-align: left;">0.049046323</td>
+<td style="text-align: left;">0.105325</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n5 → n11</td>
+<td style="text-align: left;">0.055194806</td>
+<td style="text-align: left;">0.107725</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">udp</td>
+<td style="text-align: left;">n7 → n23</td>
+<td style="text-align: left;">0.0025201612</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n8 → n24</td>
+<td style="text-align: left;">0.00907258</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n9 → n25</td>
+<td style="text-align: left;">0.025214322</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n10 → n26</td>
+<td style="text-align: left;">0.070095815</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">n11 → n27</td>
+<td style="text-align: left;">0.13615733</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="网络抖动">网络抖动</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">jitter</th>
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">jitter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">n0</td>
+<td style="text-align: center;"><img src="./jitter_n0.png" alt="n0" width="600" /></td>
+<td style="text-align: center;">n1</td>
+<td style="text-align: center;"><img src="./jitter_n1.png" alt="n0" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">n2</td>
+<td style="text-align: center;"><img src="./jitter_n2.png" alt="n2" width="600" /></td>
+<td style="text-align: center;">n3</td>
+<td style="text-align: center;"><img src="./jitter_n3.png" alt="n3" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">n4</td>
+<td style="text-align: center;"><img src="./jitter_n4.png" alt="n4" width="600" /></td>
+<td style="text-align: center;">n5</td>
+<td style="text-align: center;"><img src="./jitter_n5.png" alt="n5" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="吞吐量">吞吐量</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">throughput</th>
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">throughput</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">n0</td>
+<td style="text-align: center;"><img src="./throughput_n0.png" alt="n0" width="600" /></td>
+<td style="text-align: center;">n1</td>
+<td style="text-align: center;"><img src="./throughput_n1.png" alt="n1" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">n2</td>
+<td style="text-align: center;"><img src="./throughput_n2.png" alt="n2" width="600" /></td>
+<td style="text-align: center;">n3</td>
+<td style="text-align: center;"><img src="./throughput_n3.png" alt="n3" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">n4</td>
+<td style="text-align: center;"><img src="./throughput_n4.png" alt="n4" width="600" /></td>
+<td style="text-align: center;">n5</td>
+<td style="text-align: center;"><img src="./throughput_n5.png" alt="n5" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="发送接收">发送/接收</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">send/receive</th>
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">send/receive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">n0</td>
+<td style="text-align: center;"><img src="./sendrecv_n0.png" alt="n0" width="600" /></td>
+<td style="text-align: center;">n1</td>
+<td style="text-align: center;"><img src="./sendrecv_n1.png" alt="n1" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">n2</td>
+<td style="text-align: center;"><img src="./sendrecv_n1.png" alt="n2" width="600" /></td>
+<td style="text-align: center;">n3</td>
+<td style="text-align: center;"><img src="./sendrecv_n3.png" alt="n3" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">n4</td>
+<td style="text-align: center;"><img src="./sendrecv_n2.png" alt="n4" width="600" /></td>
+<td style="text-align: center;">n5</td>
+<td style="text-align: center;"><img src="./sendrecv_n5.png" alt="n5" width="600" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="拥塞窗口">拥塞窗口</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">window</th>
+<th style="text-align: center;">node</th>
+<th style="text-align: center;">window</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">tcp0</td>
+<td style="text-align: center;"><img src="./window_tcp0.png" alt="t0" width="600" /></td>
+<td style="text-align: center;">tcp1</td>
+<td style="text-align: center;"><img src="./window_tcp1.png" alt="t1" width="600" /></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">tcp2</td>
+<td style="text-align: center;"><img src="./window_tcp1.png" alt="t2" width="600" /></td>
+<td style="text-align: center;">tcp2</td>
+<td style="text-align: center;"><img src="./window_tcp3.png" alt="t3" width="600" /></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">tcp4</td>
+<td style="text-align: center;"><img src="./window_tcp2.png" alt="t4" width="600" /></td>
+<td style="text-align: center;">tcp5</td>
+<td style="text-align: center;"><img src="./window_tcp5.png" alt="t5" width="600" /></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

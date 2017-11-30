@@ -8,16 +8,17 @@
 
 | 子文件夹（字典序）       | 描述                                   |
 |:-------------------------|:---------------------------------------|
-| Assembler-and-Simulator/ | 汇编器和解释器                         |
-| CppCheckPlusPlus/        | C++课设检查系统（官方的那个不忍直视）  |
-| CppExperiment/           | C++实验                                |
-| HTMLAnalyser/            | HTML解析器                             |
-| NDDIMS/                  | 自然灾害信息管理系统（C课设，不忍直视）|
+| Assembler-and-Simulator/ | C课设，汇编器和解释器                  |
+| NDDIMS/                  | C课设，自然灾害信息管理系统（不忍直视）|
+| HTMLAnalyser/            | 数据结构课设，HTML解析器               |
 | computerSystem/          | 计算机系统基础实验                     |
 | digitalCircuits/         | 数字电路实验                           |
-| softwareEngineering/     | 软件工程报告                           |
+| softwareEngineering/     | 软件工程课设                           |
 | x86assembly/             | x86汇编实验                            |
 | LowRC/                   | 计算机网络实验，丑陋的聊天工具         |
+| NetProtocolAnalyse/      | 计算机网络实验，协议分析               |
+| CppCheckPlusPlus/        | C++课设检查系统（官方的那个不忍直视）  |
+| CppExperiment/           | C++实验（题目不忍直视）                |
 
 # LICENSE
 
