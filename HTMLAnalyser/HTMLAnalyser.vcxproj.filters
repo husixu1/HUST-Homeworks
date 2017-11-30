@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Analyser">
+      <UniqueIdentifier>{8082ee7f-c174-4322-8aeb-c5685a3317e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{b661679b-9ac3-4504-8035-6ac2c65118aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Analyser\inc\HTML_analyser\DOM_tree_ADT.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\TreeScene\hash.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\HTML_analyser\HTML_analyser.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\http_fetcher\http_fetcher.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\src\LChild_RSibling_tree_implement\iterator_public_method_implement.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\LChild_RSibling_tree\LChild_RSibling_Tree_ADT.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\main.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\utilities\md5.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\src\LChild_RSibling_tree_implement\private_type_implement.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\src\LChild_RSibling_tree_implement\public_method_implement.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\config.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyser\inc\utilities\search.h">
+      <Filter>Analyser</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\TreeScene\TreeScene.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\AppDelegate.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\TreeScene\detailPanel.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\resourceConfig.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\inc\StartupScene\StartupSene.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Analyser\src\HTML_analyser_implement\DOM_tree_private_method.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyser\src\HTML_analyser_implement\DOM_tree_public_method.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\TreeScene\hash.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyser\src\HTML_analyser_implement\HTML_analyser_public_method.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyser\src\http_fetcher\http_fetcher.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\main.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyser\src\utilities\md5.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyser\src\utilities\search.cpp">
+      <Filter>Analyser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\AppDelegate.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\TreeScene\detailPanel.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\resourceConfig.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\StartupScene\StartupSene.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\src\TreeScene\TreeScene.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="LICENSE" />
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
+    <None Include="build-cfg.json" />
+  </ItemGroup>
+</Project>

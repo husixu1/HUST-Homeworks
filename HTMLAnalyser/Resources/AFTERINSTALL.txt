@@ -1,0 +1,3 @@
+Thank you for using HTMLAnalyser.
+If you have any questions/bug report, please contact husixu1@hotmail.com
+or open an issue on https://github.com/husixu1/HTMLAnalyser
