@@ -8,8 +8,9 @@
 
 | 子文件夹（字典序）       | 描述                                   |
 |:-------------------------|:---------------------------------------|
-| Assembler-and-Simulator/ | C课设，汇编器和解释器                  |
+| CExperiment/             | C实验                                  |
 | NDDIMS/                  | C课设，自然灾害信息管理系统（不忍直视）|
+| Assembler-and-Simulator/ | C课设，汇编器和解释器                  |
 | HTMLAnalyser/            | 数据结构课设，HTML解析器               |
 | computerSystem/          | 计算机系统基础实验                     |
 | digitalCircuits/         | 数字电路实验                           |
