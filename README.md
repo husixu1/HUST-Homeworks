@@ -23,6 +23,12 @@
 | [CppExperiment/][13]          | C++实验（题目不忍直视）                |
 | [operatingSystem/][14]        | 操作系统实验                           |
 
+番外篇：
+
+| 子文件夹                      | 描述                                      |
+|:------------------------------|:------------------------------------------|
+| [CRLSAnswer/][15]             | 算法导论答案 (Credit: [Andrew Lohr][101]) |
+
 # LICENSE
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
@@ -41,3 +47,6 @@
 [12]:https://github.com/husixu1/HUST-Homeworks/tree/master/CppCheckPlusPlus
 [13]:https://github.com/husixu1/HUST-Homeworks/tree/master/CppExperiment
 [14]:https://github.com/husixu1/HUST-Homeworks/tree/master/operatingSystem
+[15]:https://github.com/husixu1/HUST-Homeworks/tree/master/CRLSAnswer
+
+[101]:http://sites.math.rutgers.edu/~ajl213/
