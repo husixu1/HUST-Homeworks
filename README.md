@@ -19,8 +19,9 @@
 | [LowRC/][9]                   | 计算机网络实验，丑陋的聊天工具         |
 | [NetProtocolAnalyse/][10]     | 计算机网络实验，协议分析               |
 | [NetStructureDesign/][11]     | 计算机网络实验，组网                   |
+| [NetReport/][16]              | 计算机网络实验报告                     |
 | [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
-| [CppExperiment/][13]          | C++实验（题目不忍直视）                |
+| [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
 | [operatingSystem/][14]        | 操作系统实验                           |
 
 番外篇：
@@ -51,6 +52,7 @@
 [13]:https://github.com/husixu1/HUST-Homeworks/tree/master/CppExperiment
 [14]:https://github.com/husixu1/HUST-Homeworks/tree/master/operatingSystem
 [15]:https://github.com/husixu1/HUST-Homeworks/tree/master/CRLSAnswer
+[16]:https://github.com/husixu1/HUST-Homeworks/tree/master/NetReport
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/
