@@ -18,12 +18,12 @@
 /// This function is called when first thread started
 /// @param[in] param the general parameter
 /// @return a pointer to nonetype
-void *routineThread1(void * param);
+void *routineThread1(void *param);
 
 /// @brief routine of the second thread
 /// This function is called when first thread started
 /// @param[in] param the general parameter
 /// @return a pointer to nonetype
-void *routineThread2(void * param);
+void *routineThread2(void *param);
 
 #endif // MAIN_H_

@@ -1,9 +1,9 @@
-#include"sem.h"
-
 #include<sys/types.h>
 #include<sys/ipc.h>
 #include<sys/sem.h>
 #include<stdio.h>
+
+#include"sem.h"
 
 int create_Sem(int key, int size) {
     int id;
@@ -31,9 +31,9 @@ int get_Sem(int key, int size) {
     return id;
 }
 
-void set_N(int semid, int index) {
+void set_N(int semid, int index, int val) {
     union semun semopts;
-    semopts.val = 1;                                    //设定SETVAL的值为1
+    semopts.val = val;                                  //设定SETVAL的值为val
     semctl(semid, index, SETVAL, semopts);              //初始化信号量，信号量编号为0
     return;
 }

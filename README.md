@@ -22,7 +22,7 @@
 | [NetReport/][16]              | 计算机网络实验报告                     |
 | [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
 | [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
-| [operatingSystem/][14]        | 操作系统实验                           |
+| [operatingSystem/][14]        | 操作系统实验及报告                     |
 
 番外篇：
 

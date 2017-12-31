@@ -8,7 +8,7 @@
 
 /// @brief the shared memory data size (in bytes, not including control messages)
 /// This value must be less than (2 ^ 31 - 1)
-#define DATASIZE 1024
+#define DATASIZE 1000
 
 #define STATUS_PENDING  0x01
 #define STATUS_READ     0x02
@@ -20,12 +20,12 @@
 #define STATUS_TAIL     0x20
 
 /// @brief the message structure
-typedef struct _Message{
+typedef struct _Message {
     unsigned char status;   //!< current shared buffer status
     uint32_t size;          //!< current message size
     int  nextShmId;         //!< pointer to the next Message
     char data[DATASIZE];    //!< where data is stored
-}__attribute__((packed)) Message;
+} Message;
 
 /// @brief the size of buffer header (used to store read/write status and bytes read)
 /// |<- status 1byte ->|<- size 4bytes ->|

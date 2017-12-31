@@ -27,7 +27,8 @@ int get_Sem(int key, int size);
 /// @brief set the `index` of the semaphore with id `id` to 1
 /// @param[in] semid the semaphore id to set
 /// @param[in] index the index
-void set_N(int semid, int index);
+/// @param[in] val the initial value
+void set_N(int semid, int index, int val);
 
 /// @brief do P operation on semaphore with id `semid`
 /// @param[in] semid the semaphore id

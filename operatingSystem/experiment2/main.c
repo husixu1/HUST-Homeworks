@@ -18,8 +18,8 @@ static int semId;
 static int sum = 0;
 // two threads
 static pthread_t thread1, thread2;
-// thread operation threadFlag
-int threadFlag = 0;
+// termination flag
+static int terminateFlag = 0;
 
 int main() {
     // initialize semaphore
@@ -29,7 +29,8 @@ int main() {
         exit(1);
     }
     semId = create_Sem(semkey, 2);
-    set_N(semId, 0);
+    set_N(semId, 0, 0);
+    set_N(semId, 1, 1);
 
     // create two thread
     pthread_create(&thread1, NULL, routineThread1, NULL);
@@ -45,30 +46,28 @@ int main() {
 
 void *routineThread1(void *param) {
     // calaulate the sum from 1 to 100
-    for (int i = 1; i <= 100;) {
-        P(semId, 0);
-        if (threadFlag == 0) {
-            sum += i;
-            ++i;
-            threadFlag = 1;
-        }
+    for (int i = 1; i <= 100; ++i) {
+        P(semId, 1);
+        sum += i;
         V(semId, 0);
     }
+    terminateFlag = 1;
     return NULL;
 }
 
 void *routineThread2(void *param) {
     while (1) {
         P(semId, 0);
-        if (threadFlag == 1) {
-            printf("temp sum = %d\n", sum);
-            threadFlag = 0;
-        }
-        V(semId, 0);
+        printf("temp sum = %d\n", sum);
 
         // try to wait for thread 1
-        if (pthread_tryjoin_np(thread1, NULL) == 0)
+        if (terminateFlag) {
+            pthread_join(thread1, NULL);
             return NULL;
+        }
+
+        V(semId, 1);
     }
+    return NULL;
 }
 
