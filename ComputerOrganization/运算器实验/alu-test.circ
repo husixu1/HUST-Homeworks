@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="west"/>
+      <a name="radix" val="10signed"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="32"/>
+    </tool>
+    <tool name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1">
+    <tool name="Buffer">
+      <a name="width" val="3"/>
+    </tool>
+    <tool name="AND Gate">
+      <a name="facing" val="west"/>
+      <a name="width" val="16"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="OR Gate">
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="NOR Gate">
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="XOR Gate">
+      <a name="facing" val="north"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="XNOR Gate">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Odd Parity">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="3"/>
+    </tool>
+  </lib>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="width" val="32"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="select" val="5"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3">
+    <tool name="Subtractor">
+      <a name="width" val="16"/>
+    </tool>
+    <tool name="Multiplier">
+      <a name="width" val="1"/>
+    </tool>
+    <tool name="Divider">
+      <a name="width" val="16"/>
+    </tool>
+    <tool name="Negator">
+      <a name="width" val="1"/>
+    </tool>
+    <tool name="Comparator">
+      <a name="width" val="16"/>
+    </tool>
+  </lib>
+  <lib desc="#Memory" name="4">
+    <tool name="Register">
+      <a name="width" val="32"/>
+    </tool>
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5">
+    <tool name="Button">
+      <a name="facing" val="south"/>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="file#alu.circ" name="7"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Result"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="0" name="Splitter">
+      <a name="facing" val="west"/>
+    </tool>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(740,130)" to="(740,140)"/>
+    <wire from="(490,140)" to="(740,140)"/>
+    <wire from="(330,190)" to="(380,190)"/>
+    <wire from="(490,160)" to="(670,160)"/>
+    <wire from="(380,190)" to="(430,190)"/>
+    <wire from="(380,110)" to="(430,110)"/>
+    <wire from="(330,110)" to="(380,110)"/>
+    <wire from="(330,280)" to="(450,280)"/>
+    <wire from="(740,140)" to="(800,140)"/>
+    <wire from="(740,220)" to="(800,220)"/>
+    <wire from="(380,90)" to="(380,110)"/>
+    <wire from="(380,190)" to="(380,210)"/>
+    <wire from="(40,100)" to="(150,100)"/>
+    <wire from="(450,80)" to="(450,100)"/>
+    <wire from="(470,190)" to="(470,210)"/>
+    <wire from="(60,180)" to="(60,200)"/>
+    <wire from="(90,140)" to="(90,160)"/>
+    <wire from="(450,200)" to="(450,280)"/>
+    <wire from="(450,80)" to="(550,80)"/>
+    <wire from="(150,100)" to="(150,130)"/>
+    <wire from="(180,160)" to="(180,190)"/>
+    <wire from="(740,220)" to="(740,240)"/>
+    <wire from="(170,60)" to="(170,160)"/>
+    <wire from="(170,280)" to="(190,280)"/>
+    <wire from="(180,110)" to="(180,160)"/>
+    <wire from="(670,220)" to="(740,220)"/>
+    <wire from="(90,160)" to="(170,160)"/>
+    <wire from="(140,130)" to="(150,130)"/>
+    <wire from="(170,160)" to="(180,160)"/>
+    <wire from="(180,110)" to="(190,110)"/>
+    <wire from="(180,190)" to="(190,190)"/>
+    <wire from="(40,160)" to="(50,160)"/>
+    <wire from="(670,160)" to="(670,220)"/>
+    <wire from="(80,160)" to="(90,160)"/>
+    <wire from="(90,140)" to="(100,140)"/>
+    <wire from="(90,120)" to="(100,120)"/>
+    <wire from="(470,110)" to="(550,110)"/>
+    <wire from="(470,210)" to="(550,210)"/>
+    <wire from="(170,160)" to="(170,280)"/>
+    <wire from="(40,100)" to="(40,160)"/>
+    <comp lib="6" loc="(425,373)" name="Text">
+      <a name="text" val="当电路设计完成后，蓝色线红色不应该出现，输出也不应该是高阻态"/>
+    </comp>
+    <comp lib="0" loc="(800,140)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(800,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result 2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(460,150)" name="☆ALU"/>
+    <comp lib="0" loc="(740,240)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="0" loc="(550,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Equal"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(170,60)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="16"/>
+      <a name="label" val="Test #"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(740,130)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="4" loc="(330,190)" name="ROM">
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 8 32
+0
+</a>
+    </comp>
+    <comp lib="6" loc="(504,55)" name="Text">
+      <a name="text" val="封装的ALU应该正好放置于此"/>
+    </comp>
+    <comp lib="0" loc="(90,120)" name="Constant">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="6" loc="(427,349)" name="Text">
+      <a name="text" val="此电路用于检测学生设计的ALU部件封装是否符合要求"/>
+    </comp>
+    <comp lib="0" loc="(380,90)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="3" loc="(140,130)" name="Adder"/>
+    <comp lib="4" loc="(330,110)" name="ROM">
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 8 32
+0
+</a>
+    </comp>
+    <comp lib="6" loc="(426,409)" name="Text">
+      <a name="text" val="ROM中可以存放测试用例，使用时钟驱动调出不同的X，Y，S值进行批量验证"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(330,280)" name="ROM">
+      <a name="dataWidth" val="4"/>
+      <a name="contents">addr/data: 8 4
+0
+</a>
+    </comp>
+    <comp lib="0" loc="(380,210)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="0" loc="(60,200)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(550,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Signed Overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="4" loc="(80,160)" name="Register"/>
+    <comp lib="0" loc="(550,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Unsigned overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+  <circuit name="test">
+    <a name="circuit" val="test"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(260,160)" to="(260,180)"/>
+    <wire from="(140,80)" to="(220,80)"/>
+    <wire from="(140,160)" to="(220,160)"/>
+    <wire from="(240,170)" to="(240,250)"/>
+    <wire from="(260,80)" to="(340,80)"/>
+    <wire from="(260,180)" to="(340,180)"/>
+    <wire from="(240,50)" to="(240,70)"/>
+    <wire from="(280,130)" to="(460,130)"/>
+    <wire from="(460,190)" to="(480,190)"/>
+    <wire from="(460,130)" to="(460,190)"/>
+    <wire from="(280,110)" to="(480,110)"/>
+    <wire from="(240,50)" to="(340,50)"/>
+    <comp lib="0" loc="(340,50)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Signed Overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(340,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Unsigned overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(140,80)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(140,160)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="0" loc="(480,190)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result 2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(346,297)" name="Text">
+      <a name="text" val="此电路用于检测学生设计的ALU部件封装是否符合要求"/>
+    </comp>
+    <comp lib="6" loc="(253,34)" name="Text">
+      <a name="text" val="封装的ALU应该正好放置于此"/>
+    </comp>
+    <comp lib="6" loc="(349,315)" name="Text">
+      <a name="text" val="蓝色线红色不应该出现，输出也不应该是高阻态"/>
+    </comp>
+    <comp lib="7" loc="(250,120)" name="☆ALU"/>
+    <comp lib="0" loc="(340,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Equal"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(240,250)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ALUOP"/>
+    </comp>
+    <comp lib="0" loc="(480,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+  <circuit name="my-alu-test-HuSixu">
+    <a name="circuit" val="my-alu-test-HuSixu"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(450,80)" to="(510,80)"/>
+    <wire from="(640,540)" to="(640,550)"/>
+    <wire from="(860,520)" to="(910,520)"/>
+    <wire from="(620,160)" to="(670,160)"/>
+    <wire from="(470,110)" to="(520,110)"/>
+    <wire from="(330,190)" to="(380,190)"/>
+    <wire from="(330,110)" to="(380,110)"/>
+    <wire from="(330,450)" to="(380,450)"/>
+    <wire from="(580,500)" to="(770,500)"/>
+    <wire from="(520,110)" to="(520,440)"/>
+    <wire from="(330,670)" to="(640,670)"/>
+    <wire from="(530,210)" to="(530,490)"/>
+    <wire from="(470,190)" to="(470,210)"/>
+    <wire from="(770,520)" to="(810,520)"/>
+    <wire from="(60,180)" to="(60,200)"/>
+    <wire from="(490,140)" to="(600,140)"/>
+    <wire from="(450,200)" to="(450,280)"/>
+    <wire from="(430,410)" to="(430,440)"/>
+    <wire from="(600,140)" to="(600,540)"/>
+    <wire from="(440,460)" to="(540,460)"/>
+    <wire from="(180,160)" to="(180,190)"/>
+    <wire from="(400,450)" to="(440,450)"/>
+    <wire from="(740,220)" to="(740,240)"/>
+    <wire from="(510,80)" to="(550,80)"/>
+    <wire from="(790,500)" to="(810,500)"/>
+    <wire from="(790,540)" to="(810,540)"/>
+    <wire from="(20,160)" to="(50,160)"/>
+    <wire from="(400,460)" to="(430,460)"/>
+    <wire from="(400,440)" to="(430,440)"/>
+    <wire from="(620,650)" to="(640,650)"/>
+    <wire from="(510,390)" to="(540,390)"/>
+    <wire from="(790,400)" to="(790,500)"/>
+    <wire from="(170,560)" to="(170,670)"/>
+    <wire from="(170,280)" to="(190,280)"/>
+    <wire from="(170,560)" to="(190,560)"/>
+    <wire from="(670,220)" to="(740,220)"/>
+    <wire from="(790,540)" to="(790,660)"/>
+    <wire from="(170,160)" to="(170,280)"/>
+    <wire from="(530,490)" to="(540,490)"/>
+    <wire from="(740,130)" to="(740,140)"/>
+    <wire from="(470,210)" to="(530,210)"/>
+    <wire from="(20,150)" to="(20,160)"/>
+    <wire from="(380,190)" to="(430,190)"/>
+    <wire from="(380,110)" to="(430,110)"/>
+    <wire from="(440,450)" to="(440,460)"/>
+    <wire from="(330,280)" to="(450,280)"/>
+    <wire from="(740,140)" to="(800,140)"/>
+    <wire from="(740,220)" to="(800,220)"/>
+    <wire from="(330,560)" to="(640,560)"/>
+    <wire from="(380,90)" to="(380,110)"/>
+    <wire from="(380,190)" to="(380,210)"/>
+    <wire from="(600,540)" to="(640,540)"/>
+    <wire from="(450,80)" to="(450,100)"/>
+    <wire from="(430,410)" to="(540,410)"/>
+    <wire from="(430,510)" to="(540,510)"/>
+    <wire from="(680,550)" to="(780,550)"/>
+    <wire from="(780,530)" to="(780,550)"/>
+    <wire from="(680,660)" to="(790,660)"/>
+    <wire from="(770,500)" to="(770,520)"/>
+    <wire from="(620,160)" to="(620,650)"/>
+    <wire from="(520,440)" to="(540,440)"/>
+    <wire from="(530,210)" to="(550,210)"/>
+    <wire from="(520,110)" to="(550,110)"/>
+    <wire from="(80,160)" to="(170,160)"/>
+    <wire from="(580,400)" to="(790,400)"/>
+    <wire from="(170,280)" to="(170,450)"/>
+    <wire from="(170,50)" to="(170,160)"/>
+    <wire from="(170,450)" to="(170,560)"/>
+    <wire from="(170,670)" to="(190,670)"/>
+    <wire from="(170,450)" to="(190,450)"/>
+    <wire from="(780,510)" to="(810,510)"/>
+    <wire from="(780,530)" to="(810,530)"/>
+    <wire from="(180,110)" to="(180,160)"/>
+    <wire from="(780,450)" to="(780,510)"/>
+    <wire from="(510,80)" to="(510,390)"/>
+    <wire from="(580,450)" to="(780,450)"/>
+    <wire from="(170,160)" to="(180,160)"/>
+    <wire from="(180,110)" to="(190,110)"/>
+    <wire from="(180,190)" to="(190,190)"/>
+    <wire from="(430,460)" to="(430,510)"/>
+    <wire from="(670,160)" to="(670,220)"/>
+    <wire from="(490,160)" to="(620,160)"/>
+    <wire from="(600,140)" to="(740,140)"/>
+    <comp lib="6" loc="(240,510)" name="Text">
+      <a name="text" val="Expected Result"/>
+    </comp>
+    <comp lib="0" loc="(740,240)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="0" loc="(800,140)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(460,150)" name="☆ALU"/>
+    <comp lib="3" loc="(580,500)" name="Comparator">
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="0" loc="(380,210)" name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="3" loc="(580,450)" name="Comparator">
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="0" loc="(380,90)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="0" loc="(740,130)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="10signed"/>
+    </comp>
+    <comp lib="0" loc="(60,200)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(20,150)" name="Power">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="4" loc="(330,110)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 16 32
+11111111 1231231 31231231 41adafdf
+</a>
+    </comp>
+    <comp lib="0" loc="(170,50)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="10unsigned"/>
+      <a name="label" val="Test Case #"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="3" loc="(680,660)" name="Comparator">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(550,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Unsigned overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="4" loc="(330,670)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 16 32
+0
+</a>
+    </comp>
+    <comp lib="0" loc="(550,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Signed Overflow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(860,520)" name="AND Gate"/>
+    <comp lib="3" loc="(580,400)" name="Comparator">
+      <a name="width" val="1"/>
+    </comp>
+    <comp lib="4" loc="(330,450)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="3"/>
+      <a name="contents">addr/data: 16 3
+0
+</a>
+    </comp>
+    <comp lib="0" loc="(800,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Result 2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(550,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Equal"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(380,450)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="6" loc="(504,55)" name="Text">
+      <a name="text" val="封装的ALU应该正好放置于此"/>
+    </comp>
+    <comp lib="3" loc="(680,550)" name="Comparator">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="4" loc="(80,160)" name="Counter">
+      <a name="width" val="16"/>
+      <a name="max" val="0xffff"/>
+    </comp>
+    <comp lib="4" loc="(330,560)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 16 32
+0
+</a>
+    </comp>
+    <comp lib="4" loc="(330,280)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="4"/>
+      <a name="contents">addr/data: 16 4
+0
+</a>
+    </comp>
+    <comp lib="6" loc="(246,624)" name="Text">
+      <a name="text" val="Expected Result 2"/>
+    </comp>
+    <comp lib="5" loc="(910,520)" name="LED">
+      <a name="color" val="#00f029"/>
+      <a name="offcolor" val="#ff1a00"/>
+      <a name="label" val="Passed?"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="6" loc="(238,404)" name="Text">
+      <a name="text" val="Expected Flags"/>
+    </comp>
+    <comp lib="4" loc="(330,190)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 16 32
+0
+</a>
+    </comp>
+  </circuit>
+</project>

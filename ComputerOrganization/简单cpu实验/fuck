@@ -1,0 +1,34 @@
+sort use :.,.+23sort! /\v\|(0|1)+ \|/
+
+ALU
+===========
+#   op     op      special  aluop  alu  Xsrc  Ysrc     operation
+1   add    000000  100000   0101   add  $rs   $rt      $rd<-$rs+$rt
+2   addi   001000  -        0101   add  $rs   i        $rt<-$rs+i
+3   addiu  001001  -        0101   add  $rs   i        $rt<-$rs+i
+4   addu   000000  100001   0101   add  $rs   $rt      $rd<-$rs+$rt
+5   and    000000  100100   0111   and  $rs   $rt      $rd<-$rs&$rt
+6   andi   001100  -        0111   and  $rs   i        $rt<-$rs&i
+7   sll    000000  000000   0000   sl   $rt   sa       $rd<-$rt<<sa
+8   sra    000000  000011   0001   sra  $rt   sa       $rd<-$rt>>>sa
+9   srl    000000  000010   0010   srl  $rt   sa       $rd<-$rt>>sa
+10  sub    000000  100010   0110   sub  $rs   $rt      $rd<-$rs-$rt
+11  or     000000  100101   1000   or   $rs   $rt      $rd<-$rs$rt
+12  ori    001101  -        1000   or   $rs   i        $rt<-$rsi
+13  nor    000000  100111   1010   nor  $rs   $rt      $rd<-$rs<nor>$rt
+14  lw     100011  -        0101   add  $rs   i        $rt<-offset(base),a.k.a:i+$rs
+15  sw     101011  -        0101   add  $rs   i        offset(base)<-$rt,a.k.a:i+$rs
+16  beq    000100  -        -      -    $rs   $rt      if:$rs==$rt,PC+=offset
+17  bne    000101  -        -      -    $rs   $rt      if:$rs!=$rt,PC+=offset
+18  slt    000000  101010   1011   lt   $rs   $rt      $rd<-($rs<$rt)
+19  slti   001010  -        1011   lt   $rs   i        $rt<-($rs<i)
+20  sltu   000000  101011   1100   ltu  $rs   $rt      $rd<-($rs<$rt)
+21  j      000010  -        -      -    -     -        j->target
+22  jal    000011  -        0101   add  PC    4        $31<-PC+4,j->label
+23  jr     000000  001000   -      -    -     -        PC<-$rs
+24  sys    000000  001100   -      -    -     -        syscall
+
+C   srlv   000000  000110   0010   srl  $rt   $rs      $rd<-$rt>>$rs
+C   sltiu  001011  -        1011   lt   $rs   i        $rt<-($rs<i)
+M   lbu    100100  -        0101   add  $rs   i        $rt<-offset(base),a.k.a:i+$rs
+B   bltz   000001  -        1011   lt   $rs   0        if:$rs<0,PC+=offset

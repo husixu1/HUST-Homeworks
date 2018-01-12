@@ -12,10 +12,10 @@
 | [NDDIMS/][2]                  | C课设，自然灾害信息管理系统（不忍直视）|
 | [Assembler-and-Simulator/][3] | C课设，汇编器和解释器                  |
 | [HTMLAnalyser/][4]            | 数据结构课设，HTML解析器               |
-| [computerSystem/][5]          | 计算机系统基础实验                     |
-| [digitalCircuits/][6]         | 数字电路实验                           |
-| [softwareEngineering/][7]     | 软件工程课设                           |
-| [x86assembly/][8]             | x86汇编实验                            |
+| [ComputerSystem/][5]          | 计算机系统基础实验                     |
+| [DigitalCircuits/][6]         | 数字电路实验                           |
+| [SoftwareEngineering/][7]     | 软件工程课设                           |
+| [X86assembly/][8]             | x86汇编实验                            |
 | [LowRC/][9]                   | 计算机网络实验，丑陋的聊天工具         |
 | [NetProtocolAnalyse/][10]     | 计算机网络实验，协议分析               |
 | [NetStructureDesign/][11]     | 计算机网络实验，组网                   |
@@ -23,7 +23,8 @@
 | [NetReport/][16]              | 计算机网络实验报告                     |
 | [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
 | [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
-| [operatingSystem/][14]        | 操作系统实验及报告                     |
+| [OperatingSystem/][14]        | 操作系统实验及报告                     |
+| [ComputerOrganization][18]    | 计算机组成原理4次实验及报告            |
 
 番外篇：
 
@@ -42,19 +43,20 @@
 [2]:https://github.com/husixu1/HUST-Homeworks/tree/master/NDDIMS
 [3]:https://github.com/husixu1/HUST-Homeworks/tree/master/Assembler-and-Simulator
 [4]:https://github.com/husixu1/HUST-Homeworks/tree/master/HTMLAnalyser
-[5]:https://github.com/husixu1/HUST-Homeworks/tree/master/computerSystem
-[6]:https://github.com/husixu1/HUST-Homeworks/tree/master/digitalCircuits
-[7]:https://github.com/husixu1/HUST-Homeworks/tree/master/softwareEngineering
-[8]:https://github.com/husixu1/HUST-Homeworks/tree/master/x86assembly
+[5]:https://github.com/husixu1/HUST-Homeworks/tree/master/ComputerSystem
+[6]:https://github.com/husixu1/HUST-Homeworks/tree/master/DigitalCircuits
+[7]:https://github.com/husixu1/HUST-Homeworks/tree/master/SoftwareEngineering
+[8]:https://github.com/husixu1/HUST-Homeworks/tree/master/X86assembly
 [9]:https://github.com/husixu1/HUST-Homeworks/tree/master/LowRC
 [10]:https://github.com/husixu1/HUST-Homeworks/tree/master/NetProtocolAnalyse
 [11]:https://github.com/husixu1/HUST-Homeworks/tree/master/NetStructureDesign
 [12]:https://github.com/husixu1/HUST-Homeworks/tree/master/CppCheckPlusPlus
 [13]:https://github.com/husixu1/HUST-Homeworks/tree/master/CppExperiment
-[14]:https://github.com/husixu1/HUST-Homeworks/tree/master/operatingSystem
+[14]:https://github.com/husixu1/HUST-Homeworks/tree/master/OperatingSystem
 [15]:https://github.com/husixu1/HUST-Homeworks/tree/master/CRLSAnswer
 [16]:https://github.com/husixu1/HUST-Homeworks/tree/master/NetReport
 [17]:https://github.com/husixu1/HUST-Homeworks/tree/master/RaftSim
+[18]:https://github.com/husixu1/HUST-Homeworks/tree/master/ComputerOrganization
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/
