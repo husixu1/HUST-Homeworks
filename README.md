@@ -8,7 +8,7 @@
 
 | 子文件夹                      | 描述                                   |
 |:------------------------------|:---------------------------------------|
-| [CExperiment/][1]             | C实验                                  |
+| [CExperiment/][1]             | C8次实验及报告                         |
 | [NDDIMS/][2]                  | C课设，自然灾害信息管理系统（不忍直视）|
 | [Assembler-and-Simulator/][3] | C课设，汇编器和解释器                  |
 | [HTMLAnalyser/][4]            | 数据结构课设，HTML解析器               |
@@ -24,7 +24,8 @@
 | [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
 | [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
 | [OperatingSystem/][14]        | 操作系统实验及报告                     |
-| [ComputerOrganization][18]    | 计算机组成原理4次实验及报告            |
+| [ComputerOrganization/][18]   | 计算机组成原理4次实验及报告            |
+| [Algorithms/][19]             | 算法8次实验及报告                      |
 
 番外篇：
 
@@ -57,6 +58,7 @@
 [16]:https://github.com/husixu1/HUST-Homeworks/tree/master/NetReport
 [17]:https://github.com/husixu1/HUST-Homeworks/tree/master/RaftSim
 [18]:https://github.com/husixu1/HUST-Homeworks/tree/master/ComputerOrganization
+[19]:https://github.com/husixu1/HUST-Homeworks/tree/master/Algorithms
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/
