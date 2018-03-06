@@ -24,6 +24,7 @@
 | [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
 | [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
 | [OperatingSystem/][14]        | 操作系统实验及报告                     |
+| [JOS/][20]                    | 操作课设及报告（MIT-JOS 2017 lab1~4）  |
 | [ComputerOrganization/][18]   | 计算机组成原理4次实验及报告            |
 | [Algorithms/][19]             | 算法8次实验及报告                      |
 
@@ -59,6 +60,7 @@
 [17]:https://github.com/husixu1/HUST-Homeworks/tree/master/RaftSim
 [18]:https://github.com/husixu1/HUST-Homeworks/tree/master/ComputerOrganization
 [19]:https://github.com/husixu1/HUST-Homeworks/tree/master/Algorithms
+[20]:https://github.com/husixu1/HUST-Homeworks/tree/master/JOS
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/

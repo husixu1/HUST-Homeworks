@@ -1,0 +1,42 @@
+%! TEX program = xelatex
+\documentclass{report}
+\input{conf/ctex_wrapper.tex}
+\input{conf/code_wrapper.tex}
+\input{conf/report_settings.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{./res/}}
+
+% report content %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% cover page
+\input{src/cover.tex}
+
+% chapter 1
+\input{src/lab1.tex}
+
+% chapter 2
+\input{src/lab2.tex}
+
+% chapter 3
+\input{src/lab3.tex}
+
+% chapter 4
+\input{src/lab4.tex}
+
+\vfill
+{\tiny written by HuSixu \hfill powered by \XeLaTeX .}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% in this report i learned:
+% how to use a tcolorbox(see conf/report_settings.tex)
+% how to use a siderule(see conf/report_settings.tex)
+% how to use long argument in xparse (+m, +o, ..., see cont/report_settings.tex)
+% how to use latex and avoid warning(see conf/ctex_wrapper.tex)
+% how to use footnote in a box and let footnote show at the bottom of the page (use footnotemark and footnotetext, do not use footmisc package)
+
