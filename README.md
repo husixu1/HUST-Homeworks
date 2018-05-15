@@ -6,28 +6,29 @@
 
 虽然基本上没有什么用，但是还是要基于CC BY-NC发布（若子文件夹下有LICENSE文件则按子文件夹下的LICENSE发布，否则CC BY-NC发布）。
 
-| 子文件夹                      | 描述                                   |
-|:------------------------------|:---------------------------------------|
-| [CExperiment/][1]             | C8次实验及报告                         |
-| [NDDIMS/][2]                  | C课设，自然灾害信息管理系统（不忍直视）|
-| [Assembler-and-Simulator/][3] | C课设，汇编器和解释器                  |
-| [HTMLAnalyser/][4]            | 数据结构课设，HTML解析器               |
-| [ComputerSystem/][5]          | 计算机系统基础实验                     |
-| [DigitalCircuits/][6]         | 数字电路实验                           |
-| [SoftwareEngineering/][7]     | 软件工程课设                           |
-| [X86assembly/][8]             | x86汇编实验                            |
-| [LowRC/][9]                   | 计算机网络实验，丑陋的聊天工具         |
-| [NetProtocolAnalyse/][10]     | 计算机网络实验，协议分析               |
-| [NetStructureDesign/][11]     | 计算机网络实验，组网                   |
-| [RaftSim/][17]                | 计算机网络实验，Raft协议vote部分模拟   |
-| [NetReport/][16]              | 计算机网络实验报告                     |
-| [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）  |
-| [CppExperiment/][13]          | C++实验及报告（题目不忍直视）          |
-| [OperatingSystem/][14]        | 操作系统实验及报告                     |
-| [JOS/][20]                    | 操作课设及报告（MIT-JOS 2017 lab1~4）  |
-| [ComputerOrganization/][18]   | 计算机组成原理4次实验及报告            |
-| [Algorithms/][19]             | 算法8次实验及报告                      |
-| [CPU/][21]                    | 计算机组成原理: MPIS CPU实验及报告     |
+| 子文件夹                      | 描述                                     |
+|:------------------------------|:-----------------------------------------|
+| [CExperiment/][1]             | C8次实验及报告                           |
+| [NDDIMS/][2]                  | C课设，自然灾害信息管理系统（不忍直视）  |
+| [Assembler-and-Simulator/][3] | C课设，汇编器和解释器                    |
+| [HTMLAnalyser/][4]            | 数据结构课设，HTML解析器                 |
+| [ComputerSystem/][5]          | 计算机系统基础实验                       |
+| [DigitalCircuits/][6]         | 数字电路实验                             |
+| [SoftwareEngineering/][7]     | 软件工程课设                             |
+| [X86assembly/][8]             | x86汇编实验                              |
+| [LowRC/][9]                   | 计算机网络实验，丑陋的聊天工具           |
+| [NetProtocolAnalyse/][10]     | 计算机网络实验，协议分析                 |
+| [NetStructureDesign/][11]     | 计算机网络实验，组网                     |
+| [RaftSim/][17]                | 计算机网络实验，Raft协议vote部分模拟     |
+| [NetReport/][16]              | 计算机网络实验报告                       |
+| [CppCheckPlusPlus/][12]       | C++课设检查系统（官方的那个不忍直视）    |
+| [CppExperiment/][13]          | C++实验及报告（题目不忍直视）            |
+| [OperatingSystem/][14]        | 操作系统实验及报告                       |
+| [JOS/][20]                    | 操作系统课设及报告(MIT-JOS 2017 lab1~4)  |
+| [ComputerOrganization/][18]   | 计算机组成原理4次实验及报告              |
+| [Algorithms/][19]             | 算法8次实验及报告                        |
+| [CPU/][21]                    | 计算机组成原理: MPIS CPU实验及报告       |
+| [CacheLab/][22]               | 计算机系统结构实验及报告(CSAPP CacheLab) |
 
 番外篇：
 
@@ -63,6 +64,7 @@
 [19]:https://github.com/husixu1/HUST-Homeworks/tree/master/Algorithms
 [20]:https://github.com/husixu1/HUST-Homeworks/tree/master/JOS
 [21]:https://github.com/husixu1/HUST-Homeworks/tree/master/CPU
+[22]:https://github.com/husixu1/HUST-Homeworks/tree/master/CacheLab
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/

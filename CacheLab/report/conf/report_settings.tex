@@ -1,0 +1,60 @@
+\usepackage{xparse}
+\usepackage{tcolorbox}
+\usepackage{mdframed}
+
+\tcbuselibrary{breakable}
+\NewDocumentCommand{\exercise}{ m +m }{
+    {
+        \edef\originalParIndent{\the\parindent}
+        \begin{tcolorbox}[breakable,arc=0mm,boxrule=0.4pt]
+            \setlength{\parindent}{\originalParIndent}
+            \noindent
+            \textbf{\large Exercise #1}
+            \indent
+            #2
+        \end{tcolorbox}
+    }
+}
+
+% environment style of exercise, to feed special requirements
+\NewDocumentEnvironment{exerciseEnv}{m}{
+    \edef\originalParIndent{\the\parindent}
+    \begin{tcolorbox}[breakable,arc=0mm,boxrule=0.4pt]
+        \setlength{\parindent}{\originalParIndent}
+        \noindent
+        \textbf{\large Exercise #1}
+        \indent
+} {
+    \end{tcolorbox}
+}
+
+\NewDocumentEnvironment{questionEnv}{}{
+    \edef\originalParIndent{\the\parindent}
+    \begin{tcolorbox}[breakable,arc=0mm,boxrule=0.4pt]
+        \setlength{\parindent}{\originalParIndent}
+        \noindent
+        \textbf{\large Question}
+        \indent
+} {
+    \end{tcolorbox}
+}
+
+% a raised rule
+\NewDocumentCommand{\raisedrule}{ O{0em} m }{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\NewDocumentEnvironment{exerciseSolution}{m}{
+    {\noindent \textbf{\large Exercise #1 实验过程 \raisedrule[0.3em]{0.6pt}}}
+} {
+    \par
+    {\noindent \textbf{\large \raisedrule[0.3em]{0.6pt} Exercise #1 实验过程}}
+    \vspace{1em}
+}
+
+\NewDocumentEnvironment{answer}{}{
+    {\noindent \textbf{\large Answer \raisedrule[0.3em]{0.6pt}}}
+} {
+    \par
+    {\noindent \textbf{\large \raisedrule[0.3em]{0.6pt} Answer}}
+    \vspace{1em}
+}
+

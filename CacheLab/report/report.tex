@@ -1,0 +1,54 @@
+%! TEX program = xelatex
+\documentclass{report}
+\input{conf/ctex_wrapper.tex}
+\input{conf/code_wrapper.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{./res/}}
+
+% report content %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% cover page
+\input{src/cover.tex}
+
+% chapter 1
+\input{src/lab1.tex}
+
+% chapter 2
+\input{src/lab2.tex}
+
+\chapter*{心得体会}
+\addcontentsline{toc}{chapter}{心得体会}
+\label{cha:xin_de_ti_hui_}
+
+\par 通过这次实验，我对于cache的结构，运作方式以及如何更高效的写出cache friendly的代码有了更为深入的了解。通过对于cache的模拟，我对于cache的组成方式，与内存地址的对应关系以及cache组相连的工作方式有了更为深入的认识。
+\par 在对于错误代码的调试过程中，我尝试使用了各种方法来结构性的显示cache的内容以及替换的过程，这也给了我有关cache工作方式更为直观的印象。
+\par 第二个实验则更令我印象深刻，它从简单的矩阵变换入手，展示了对于程序员而言透明的cache是如何影响代码性能的，以及程序员应该如何优化代码使之能够在cache层面有更好的工作效率。通过逐步深入的实验，对于cache的理解也逐步加深，并在实验查阅资料的过程中了解到了cache优化在包括科学计算等多个领域的应用，这不仅开拓了我的视野，也为今后的学习工作奠定了基础。
+
+{\let\clearpage\relax \chapter*{源代码}}
+\addcontentsline{toc}{chapter}{源代码}
+\label{cha:yuan_dai_ma_}
+
+\inputCodeSetLanguage{c}
+\noindent \textbf{csim.c}
+\lstinputlisting{../src/csim.c}
+
+\noindent \textbf{trans.c}
+\lstinputlisting{../src/trans.c}
+
+\vfill
+{\tiny written by HuSixu \hfill powered by \XeLaTeX .}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% in this report i learned:
+% how to use a tcolorbox(see conf/report_settings.tex)
+% how to use a siderule(see conf/report_settings.tex)
+% how to use long argument in xparse (+m, +o, ..., see cont/report_settings.tex)
+% how to use latex and avoid warning(see conf/ctex_wrapper.tex)
+% how to use footnote in a box and let footnote show at the bottom of the page (use footnotemark and footnotetext, do not use footmisc package)
+
