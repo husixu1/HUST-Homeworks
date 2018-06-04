@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hims.LoginController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="55.0" vgrow="NEVER" />
+    <RowConstraints minHeight="-Infinity" prefHeight="55.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="-Infinity" prefHeight="55.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="labelStatus" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin></Label>
+      <JFXTextField fx:id="inputUsername" labelFloat="true" onKeyPressed="#onInputUsernameAction" onKeyTyped="#onInputUsernameAction" onMouseClicked="#onInputUsernameAction" onMousePressed="#onInputUsernameAction" promptText="用户名" unFocusColor="#515151" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="inputPassword" labelFloat="true" onKeyPressed="#onInputPasswordAction" onKeyTyped="#onInputPasswordAction" onMouseClicked="#onInputPasswordAction" onMousePressed="#onInputPasswordAction" promptText="密码" unFocusColor="#515050" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="buttonLoginDoctor" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#doctorLogin" style="-fx-background-color: #2196f3;" text="医生登录" textFill="WHITE" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXButton>
+      <JFXButton fx:id="buttonLoginPatient" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#patientLogin" style="-fx-background-color: #2196f3;" text="病人登录" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXButton>
+      <JFXButton fx:id="buttonExit" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#buttonExitClicked" style="-fx-background-color: #ea8192;" text="退出" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+         </GridPane.margin>
+      </JFXButton>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="挂号信息管理系统" textFill="#5d7fc3" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" />
+         </GridPane.margin>
+      </Separator>
+      <JFXBadge text="xzcv" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

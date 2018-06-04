@@ -29,6 +29,7 @@
 | [Algorithms/][19]             | 算法8次实验及报告                        |
 | [CPU/][21]                    | 计算机组成原理: MPIS CPU实验及报告       |
 | [CacheLab/][22]               | 计算机系统结构实验及报告(CSAPP CacheLab) |
+| [JavaExperiment/][23]         | Java两次实验及报告（题目惨不忍睹）       |
 
 番外篇：
 
@@ -65,6 +66,7 @@
 [20]:https://github.com/husixu1/HUST-Homeworks/tree/master/JOS
 [21]:https://github.com/husixu1/HUST-Homeworks/tree/master/CPU
 [22]:https://github.com/husixu1/HUST-Homeworks/tree/master/CacheLab
+[23]:https://github.com/husixu1/HUST-Homeworks/tree/master/JavaExperiment/
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/

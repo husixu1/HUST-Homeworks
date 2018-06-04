@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="756.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hims.DoctorController">
+   <columnConstraints>
+      <ColumnConstraints halignment="LEFT" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="130.0" />
+      <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="130.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+      <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="-Infinity" prefWidth="130.0" />
+      <ColumnConstraints halignment="LEFT" minWidth="-Infinity" prefWidth="130.0" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="-Infinity" prefWidth="1.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+   </rowConstraints>
+   <children>
+      <JFXTabPane fx:id="mainPane" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+         <tabs>
+          <Tab fx:id="tabRegister" text="挂号列表">
+               <content>
+                  <JFXTreeTableView fx:id="tableRegister" showRoot="false">
+                     <columns>
+                        <TreeTableColumn fx:id="columnRegisterNumber" prefWidth="75.0" text="挂号编号" />
+                        <TreeTableColumn fx:id="columnRegisterPatientName" prefWidth="75.0" text="病人名称" />
+                        <TreeTableColumn fx:id="columnRegisterDateTime" prefWidth="75.0" text="挂号日期时间" />
+                        <TreeTableColumn fx:id="columnRegisterType" prefWidth="75.0" text="号种类别" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXTreeTableView>
+               </content>
+          </Tab>
+          <Tab fx:id="tabIncome" onSelectionChanged="#tabSelectionChanged" text="收入列表">
+               <content>
+                  <JFXTreeTableView fx:id="tableIncome" showRoot="false">
+                     <columns>
+                        <TreeTableColumn fx:id="columnIncomeDepartmentName" prefWidth="75.0" text="科室名称" />
+                        <TreeTableColumn fx:id="columnIncomeDoctorNumber" prefWidth="75.0" text="医生编号" />
+                        <TreeTableColumn fx:id="columnIncomeDoctorName" prefWidth="75.0" text="医生名称" />
+                        <TreeTableColumn fx:id="columnIncomeRegisterType" prefWidth="75.0" text="号种类别" />
+                        <TreeTableColumn fx:id="columnIncomeRegisterPopulation" prefWidth="75.0" text="挂号人次" />
+                        <TreeTableColumn fx:id="columnIncomeSum" prefWidth="75.0" text="收入合计" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXTreeTableView>
+               </content>
+          </Tab>
+         </tabs>
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" top="5.0" />
+         </GridPane.margin>
+      </JFXTabPane>
+      <Label fx:id="labelWelcome" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin></Label>
+      <Label maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <JFXTimePicker fx:id="pickerTimeStart" defaultColor="#2196f3" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXTimePicker>
+      <Label text="结束时间" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <JFXDatePicker fx:id="pickerDateEnd" defaultColor="#2196f3" editable="false" prefWidth="130.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXDatePicker>
+      <JFXTimePicker fx:id="pickerTimeEnd" defaultColor="#2196f3" prefWidth="130.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXTimePicker>
+      <Label text="开始时间" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <JFXDatePicker fx:id="pickerDateStart" defaultColor="#2196f3" editable="false" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </JFXDatePicker>
+      <GridPane GridPane.columnIndex="6" GridPane.columnSpan="6" GridPane.rowIndex="2">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="1.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="250.0" />
+          <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="100.0" />
+        </columnConstraints>
+         <children>
+            <JFXButton fx:id="buttonFilter" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#buttomFilterPressed" style="-fx-background-color: #2196f3;" text="过滤 / 更新" textFill="WHITE" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="buttonExit" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#buttonExitClicked" style="-fx-background-color: #2196f3;" text="退出" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </GridPane.margin>
+            </JFXButton>
+            <JFXCheckBox fx:id="checkBoxAllTime" onAction="#checkBoxAllTimeSelected" text="全部时间" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="checkBoxToday" onAction="#checkBoxTodaySelected" text="今天" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </JFXCheckBox>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
