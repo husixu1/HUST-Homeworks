@@ -8,3 +8,6 @@
     * start mariadb/mysql service
 * use jre8
     * run `java -jar out/hims.jar` to run the program (make sure to use java 8)
+
+# NOTE
+this program has no security.
