@@ -1,0 +1,59 @@
+% provides code input support
+\usepackage{xparse}                     % newcommand multiple optional arguments
+\usepackage{listings}                   % code
+\usepackage{fontspec}
+\usepackage{lmodern}
+
+%\newfontfamily\codeF{Fira Code}
+
+\setmonofont[
+    Contextuals={Alternate},
+    ItalicFont = Fira Code      % to avoid font warning
+]{Fira Code}
+
+% usage: \inputCode{[language] <path>}
+% if language is not explicitly set, it's defaulted to c
+\DeclareDocumentCommand{\inputCode}{ O{c} m }{
+    {
+        \lstinputlisting[
+            basicstyle=\small\ttfamily,
+            language={#1},
+            tabsize=4,
+            showstringspaces=false,
+            breaklines=true,
+            frame=shadowbox,
+            framexleftmargin=10mm,
+            rulesepcolor=\color{black},
+            numbers=left,
+            xleftmargin=4em,
+        ]{#2}
+    }
+}
+
+\DeclareDocumentCommand{\inputCodeSetLanguage}{ m }{
+    \lstset{
+        basicstyle=\small\ttfamily,
+        language={#1},
+        tabsize=4,
+        showstringspaces=false,
+        breaklines=true,
+        frame=shadowbox,
+        framexleftmargin=10mm,
+        rulesepcolor=\color{black},
+        numbers=left,
+        xleftmargin=4em,
+    }
+}
+
+\DeclareDocumentCommand{\inputCodeNoNumberSetLanguage}{ m }{
+    \lstset{
+        basicstyle=\small\ttfamily,
+        language={#1},
+        tabsize=4,
+        showstringspaces=false,
+        breaklines=true,
+        frame=shadowbox,
+        rulesepcolor=\color{black},
+    }
+}
+

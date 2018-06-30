@@ -1,0 +1,48 @@
+% provides basic settings for ctex document
+\usepackage[UTF8, heading=true]{ctex}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage[margin=1in]{geometry}
+\usepackage{metalogo}                   % \XeLaTeX
+\usepackage{float}                      % figure H flag
+\usepackage{microtype}                  % break long words
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{lmodern}                    % allow fonts to scale
+\usepackage{placeins}
+\usepackage{multirow}                   % multirow, multicolumn support
+\usepackage{booktabs}                   % toprule, cmidrule support
+\usepackage{caption}
+
+% make chapter stay in the same page
+%\makeatletter
+%\renewcommand\chapter{\thispagestyle{plain}%
+%\global\@topnum\z@
+%\@afterindentfalse
+%\secdef\@chapter\@schapter}
+%\makeatother
+
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markleft{#1}}
+\renewcommand{\partmark}[1]{\markright{#1}}
+\lhead{\tiny \leftmark}
+\rhead{\tiny \rightmark}
+% see $(texdoc ctex) for details
+\ctexset{
+    chapter = {
+        name = {实验},
+        format += \flushleft,
+        number = \arabic{chapter},
+    },
+    section = {
+        format += \flushleft,
+    },
+    appendix = {
+        number = \Alph{chapter},
+        name = {附录},
+    },
+}
+
+\pagestyle{fancy}
+%\setlength\cftaftertoctitleskip{2em}

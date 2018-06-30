@@ -1,0 +1,3 @@
+*.o
+lab*/lab*
+report/output/
