@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>student.qml</file>
+        <file>login.qml</file>
+        <file>teacher.qml</file>
+        <file>manager.qml</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file>TableHeaderStyle.qml</file>
+    </qresource>
+</RCC>
