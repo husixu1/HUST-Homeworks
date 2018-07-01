@@ -1,0 +1,33 @@
+% provides algorithm input support
+\usepackage{algorithm}                  % algorithm pseudo code
+\usepackage[noend]{algpseudocode}
+\usepackage{caption}
+
+% usage:
+% \begin{simpleAlgorithm}{<algorithm-name>}
+%     \Procedure{<procedure-name>}{$<parameters>$}
+%     \State <statements>
+%     \For{<condition>}
+%     ...
+%     \EndFor
+%     \If{<condition>}
+%         ...
+%     \ElsIf{<condition>}
+%         ...
+%     \Else
+%         ...
+%     \EndIf
+%     \State \Return <return val>
+%     \EndProcedure
+% \end{simpleAlgorithm}
+%
+% see $(texdoc algorithmic for details)
+\NewDocumentEnvironment{simpleAlgorithm}{m}
+{
+\captionof{algorithm}{#1}
+\hrule
+\begin{algorithmic}[1]
+} {
+\end{algorithmic}
+\hrule \vspace{1em}
+}

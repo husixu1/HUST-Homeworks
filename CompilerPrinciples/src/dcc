@@ -1,0 +1,34 @@
+#!/bin/bash
+
+CURDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+COMPILER="${CURDIR}"/decafcc
+
+# check parameters
+[[ $# != 1 && $# != 3 ]] && {
+    echo "Usage: $(basename "${COMPILER}") <decaf-file> [-o <output-file>] "
+    exit 1
+}
+[[ $# == 3 && $2 != "-o" ]] && { echo "$2 not recognized."; exit 1; }
+[[ $# == 3 && -f $3 ]] && { echo "$3 exists, overwriting ..."; }
+
+# define output file, default to a.out
+OUTPUT=${3:-a.out}
+
+# check compiler
+[[ ! -x "$COMPILER" ]] && { echo "$COMPILER is not an executable file"; exit 1; }
+
+# check input file
+[[ ! -r "$1" ]] && { echo "Cannot find decaf file $1."; exit 1; }
+
+# compile
+[[ $(eval "${COMPILER} < $1 > ${OUTPUT}") -ne 0 ]] && {
+    echo "[91mError compiling '$1'.[0m"
+    exit 1;
+}
+echo "[92mDone.[0m"
+
+# link
+cat "${CURDIR}/defs.asm" >> "${OUTPUT}"
+
+# $SPIM -trap_file trap.handler -file tmp.asm
+exit 0;
