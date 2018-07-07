@@ -33,6 +33,7 @@
 | [Database/][24]               | 数据库2次实验、课设及报告                |
 | [Embedded/][25]               | 嵌入式5次实验及报告                      |
 | [CompilerPrinciples/][26]     | 编译原理课设及报告                       |
+| [MachineLearning/][27]        | 机器学习实验及报告                       |
 
 番外篇：
 
@@ -73,6 +74,7 @@
 [24]:https://github.com/husixu1/HUST-Homeworks/tree/master/Database
 [25]:https://github.com/husixu1/HUST-Homeworks/tree/master/Embedded
 [26]:https://github.com/husixu1/HUST-Homeworks/tree/master/CompilerPrinciples
+[27]:https://github.com/husixu1/HUST-Homeworks/tree/master/MachineLearning
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/
