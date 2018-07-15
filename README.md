@@ -35,6 +35,7 @@
 | [CompilerPrinciples/][26]     | 编译原理课设及报告                       |
 | [MachineLearning/][27]        | 机器学习实验及报告                       |
 | [DataMining/][28]             | 数据挖掘实验及报告                       |
+| [ParallelProgramming/][29]    | 并行编程实验及报告                       |
 
 番外篇：
 
@@ -77,6 +78,7 @@
 [26]:https://github.com/husixu1/HUST-Homeworks/tree/master/CompilerPrinciples
 [27]:https://github.com/husixu1/HUST-Homeworks/tree/master/MachineLearning
 [28]:https://github.com/husixu1/HUST-Homeworks/tree/master/DataMining
+[29]:https://github.com/husixu1/HUST-Homeworks/tree/master/ParallelProgramming
 
 [101]:http://sites.math.rutgers.edu/~ajl213/
 [102]:http://kinolien.github.io/gitzip/

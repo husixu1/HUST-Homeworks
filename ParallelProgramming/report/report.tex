@@ -1,0 +1,173 @@
+%! TEX program = xelatex
+\documentclass{report}
+\input{conf/ctex_wrapper.tex}
+\input{conf/code_wrapper.tex}
+\input{conf/report_settings.tex}
+\input{conf/algo_wrapper.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{./res/}}
+
+% report content %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% cover page
+\input{src/cover.tex}
+
+% chapter 1
+\input{src/lab1.tex}
+
+
+% chapter 2
+\input{src/lab2.tex}
+
+% chapter 3
+\input{src/lab3.tex}
+
+% chapter 4
+\input{src/lab4.tex}
+
+% chapter 5
+\input{src/lab5.tex}
+
+\chapter{基于并行回溯算法的数独求解算法}
+\section{实验目的与要求}
+\begin{enumerate}
+    \item 掌握并行化和改进程序的方法
+    \item 了解并行粒度与性能之间的关系
+    \item 掌握如何分割数据和分解复杂算法的任务
+\end{enumerate}
+
+\section{算法描述}
+\par 数独的规则见\url{https://zh.wikipedia.org/zh-sg/%E6%95%B8%E7%8D%A8}。一个未求解和已经进行求解的数独如图\ref{fig:unsolved}和\ref{fig:solved}所示。
+\begin{figure}[htpb]
+    \centering
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{unsolved.png}
+        \caption{未求解的数独}
+        \label{fig:solved}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        \includegraphics[width=0.9\linewidth]{solved.png}
+        \caption{已经求解的数独}
+        \label{fig:unsolved}
+    \end{minipage}
+\end{figure}
+\par 首先，需要一个串行的数独求解程序进行参考，串行的程序使用回溯的方法对于数独进行求解，同样，为了便于时间的统计，因此需要增加求解的数据量，此时，对于100个数独进行求解。
+\par 然后需要设计一个并行的数独求解程序。由于数独前后的逻辑依赖性较强，因此不便于进行并行。在本实验中采用的数独求解方法为并行化的测试一个cell中的所有case，以求获得最小的可能的case的时间。此时，case的选择可以在不同的遍历层级进行。递归的层级越高则粒度越低。
+
+\section{实验方案}
+\par 按照算法描述中的算法编写OpenMP程序，在小于特定层级时将所有的可能性如队列，然后在这一特定的层级使用OpenMP进行并行，在大于这一层级不再使用并行算法，以避免线程数量指数爆炸。
+\par 需要注意的是在一个线程找到结果后需要及时停止其他的线程，而在停止时不可以使用C++ exception，经过性能测试，exception带来的开销约为20\%，极大的开销会为程序带来负优化。线程的错误处理一定因此通过返回值的方式进行。
+
+\section{实验结果与分析}
+\par 串行程序解决100个数独的结果如图\ref{fig:sudoSerial}所示。数独题目由qqwing程序生成，所有答案经过验证均正确。从图中可以看出，串行的程序需要使用25.8s进行求解。
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.9\linewidth]{sudoSerial.png}
+    \caption{串行数独求解}
+    \label{fig:sudoSerial}
+\end{figure}
+\par 在递归的第二层进行4线程并行的时间如图\ref{fig:sudoParallel}所示，从图中可以看出，需要2.96s进行求解，相比于串行程序，加速比为8.71，达到了较为理想的加速比。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\linewidth]{sudoParallel.png}
+    \caption{4线程并行数独求解}
+    \label{fig:sudoParallel}
+\end{figure}
+\par 加速比与粒度的关系如图\ref{fig:sudoTrend}所示。可以看出，粒度越细加速比越低，这是由于前边的并行部分增大以及线程竞争引起的。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{sudoTrend.png}
+    \caption{加速比随粒度的变化关系}
+    \label{fig:sudoTrend}
+\end{figure}
+
+\appendix
+\chapter{开发与运行环境}
+\label{cha:env}
+
+\par 所有lab的开发与运行的环境的平台、版本如表\ref{tab:env}所示。
+\begin{table}[htpb]
+    \centering
+    \caption{开发与运行环境}
+    \label{tab:env}
+    \begin{tabular}{ c r l }
+        \toprule
+        \multicolumn{1}{c}{} &
+        \multicolumn{1}{c}{项目} &
+        \multicolumn{1}{c}{版本} \\
+        \cmidrule(lr){1-1} \cmidrule(lr){2-2} \cmidrule(lr){3-3}
+        \multirow{8}{*}{软件} & 操作系统    & ArchLinux,  Kernel version 4.17.5-1\\
+                              & gcc             & 8.1.1     \\
+                              & GNU Make        & 4.2.1     \\
+                              & OpenMP          & 6.0.1     \\
+                              & OpenMPI         & 3.1.0-1   \\
+                              & CUDA            & 9.2.148-1 \\
+                              & Nvidia driver   & 396.24-15 \\
+                              & shell           & fish 2.7.1\\
+        \cmidrule(lr){1-1} \cmidrule(lr){2-2} \cmidrule(lr){3-3}
+        \multirow{3}{*}{硬件} & CPU             & Intel Core i7-7700K CPU @ 4.20GHz \\
+                              & GPU             & NVIDIA Corporation GP102 [GeForce GTX 1080 Ti] \\
+                              & RAM             & Kingston DDR4 16GiB (\(\times 2\))\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\par 目录结构如下
+\inputCodeSetLanguage{bash}
+\begin{lstlisting}
+./                          project根目录
+├── README.md               README文件（本文件）
+├── Makefile                主Makefile，用于同时编译/清除所有lab
+├── data                    数据目录
+│   ├── Lenna.png           lab1 ~ lab5 所用图片
+│   └── questions.txt       lab6 所用数独数据
+├── lab1                    串行形态学图像处理
+│   ├── Makefile            lab1 Makefile
+│   └── main.cpp            lab1 源码
+├── lab2                    使用pthread加速的多线程图像处理
+│   ├── Makefile            lab2 Makefile
+│   └── main.cpp            lab2 源码
+├── lab3                    使用openmp加速的多线程图像处理
+│   ├── Makefile            lab3 Makefile
+│   └── main.cpp            lab3 源码
+├── lab4                    使用openmpi加速的多线程图像处理
+│   ├── Makefile            lab4 Makefile
+│   ├── main.cpp            lab4 源码
+│   └── run.sh              openmpi 运行环境的包装，使用mpirun执行编译输出
+├── lab5                    使用cuda加速的多线程图像处理
+│   ├── Makefile            lab5 Makefile
+│   └── main.cu             lab5 源码
+├── project1                数独求解程序
+│   ├── Makefile            lab6 Makefile
+│   ├── parallel.cpp        使用openmp加速的并行数独求解程序源码
+│   └── serial.cpp          串行数独求解程序源码
+├── lib                     第三方库文件夹
+│   └── CImg-2.3.3          CImg图像处理库
+│       └── ...             CImg图像处理库内容
+└── report                  报告文件夹
+        └── ...             报告内容
+\end{lstlisting}
+
+\par 要正常的编译和运行，需要保证gcc、nvcc所在的目录在\$PATH中。
+
+\par 要能够正确的编译并运行lab5，需要满足下列要求：
+\begin{itemize}
+    \item nvcc在\$PATH中
+    \item PC上装有支持cuda的Nvidia显卡
+    \item 正确版本的Nvidia驱动以正确安装并 **已加载**
+    \item Nvidia显卡有足够的显存以及足够的Concurrent Thread数目以支持程序的运行。
+\end{itemize}
+
+\par 此外，lab2、lab3可以使用`-n <number>`来指定线程数，使用`-s <number>` 来指定图片分块大小 (推荐在8~256之间) ；lab4可以通过更改`run.sh`更改进程数，进程数必须大于1，但不可超过CPU物理内核数。
+
+
+\vfill
+{\tiny written by HuSixu \hfill powered by \XeLaTeX .}
+
+\end{document}
