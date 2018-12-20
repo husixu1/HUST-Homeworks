@@ -1,5 +1,4 @@
 # NOTE
-CANNOT compile on mac OSX. Don't event think about it.
 
 To run: (make sure bison, flex, gcc>=8 installed)
 ```
