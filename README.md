@@ -48,6 +48,9 @@
 # NOTE
 你可以使用[GitZip][102]来下载单个子文件夹。
 
+# NOTE 2
+本人已经毕业，本仓库将不会再更新。由于种种原因，本人的毕业设计将不会开源，如有需要请单独联系。
+
 # LICENSE
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
